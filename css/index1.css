@@ -1,3 +1,9 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-transform: uppercase;
+}
+
 .oneform{
    
     height: 32em;
@@ -28,13 +34,7 @@ text-shadow: 4px 4px 4px #00000029;
 margin-top: 0.5em;
 
 }
-body{
-    background-image: url('Web%201920%20%E2%80%93%201.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-transform: capitalize;
-  
-}
+
 .nav{
     margin: 30px;
     justify-content: space-between;

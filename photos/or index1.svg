@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="386.417" height="83.228" viewBox="0 0 386.417 83.228">
+  <g id="Group_10752" data-name="Group 10752" transform="translate(-100.362 -544)">
+    <g id="Group_2752" data-name="Group 2752" transform="translate(258.504 544.5)">
+      <g id="Group_2755" data-name="Group 2755" transform="translate(0 0)">
+        <g id="Group_2754" data-name="Group 2754" transform="translate(0 0)">
+          <path id="Icon_ionic-md-flower" data-name="Icon ionic-md-flower" d="M71.923,44.489a14.634,14.634,0,0,0-6.345-27.91,14.885,14.885,0,0,0-8.42,2.589l.119-1.107a14.825,14.825,0,0,0-29.65,0l.119,1.107A14.864,14.864,0,0,0,4.5,31.265a14.642,14.642,0,0,0,8.48,13.224A14.634,14.634,0,0,0,19.325,72.4a14.885,14.885,0,0,0,8.42-2.589l-.119,1.107a14.825,14.825,0,0,0,29.65,0l-.119-1.107A14.716,14.716,0,1,0,71.923,44.489Z" transform="translate(-4.5 -3.375)" fill="#d6efc7" stroke="#d6efc7" stroke-width="1"/>
+        </g>
+        <text id="OR" transform="translate(17.469 50.7)" fill="#184d47" font-size="29" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="0" y="0">OR</tspan></text>
+      </g>
+    </g>
+    <line id="Line_3" data-name="Line 3" x2="141.328" transform="translate(100.362 585.328)" fill="none" stroke="#707070" stroke-width="1" opacity="0.7"/>
+    <line id="Line_4" data-name="Line 4" x2="141.593" transform="translate(345.185 584.955)" fill="none" stroke="#707070" stroke-width="1" opacity="0.7"/>
+  </g>
+</svg>
