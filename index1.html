@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link  rel="stylesheet" href="projectstyle.css">
+    <link  rel="stylesheet" href="css/index1.css">
+
     <title>login</title>
 </head>
 <body>
@@ -101,13 +102,17 @@
                   </button>
                   </div>
                   <div id="emailHelp" class="form-text">
-                    In case you forget password ?
+                    <a href="#" style="text-decoration: none;">
+                    In case you forget password ? </a>
                   </div>
+                    <!--button to sign in-->
+                    <div class="d-flex justify-content-center">
+                      <button type="submit" class="btn btn-light" >Submit</button>
+                    </div>
 
-
-                  <div class="grid ">
-                    <button onclick="insing()" id="cli1" class="btnn btn" type="button">signin</button>
-                    <button onclick="upsing()"  class="btnn btn" type="button">signup</button>
+                  <div class="grid " style="margin-top: 3.3em;">
+                    <button onclick="insing()" id="cli1" class="btnn btn" type="button">sign in</button>
+                    <button onclick="upsing()"  class="btnn btn" type="button">sign up</button>
                   </div>
                  
                 </form>
@@ -182,11 +187,15 @@
                         <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                       </svg></i>
                     </button>
+
                     </div>
-          
+                    <!--button to sign up-->
+                    <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-light">Submit</button>
+                  </div>
                     <div class="grid ">
-                      <button onclick="insing()"  class="btnn btn" type="button">signin</button>
-                      <button  onclick="upsing()"  class="btnn btn" type="button" style="background-color: #FAD586;">signup</button>
+                      <button onclick="insing()"  class="btnn btn" type="button">sign in</button>
+                      <button  onclick="upsing()"  class="btnn btn" type="button" style="background-color: #FAD586;">sign up</button>
                     </div>
                    
                   </form>

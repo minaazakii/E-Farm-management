@@ -1,16 +1,22 @@
 .oneform{
    
-    height: 30em;
+    height: 32em;
     background-color: hsl(95, 32%, 61%,0.58);
     border-radius: 39px 0px;
+    text-transform: capitalize;
+
    
 
 }
 .twoform{
    
-    height: 30em;
+    height: 32em;
     background-color: hsl(95, 32%, 61%,0.58);
     border-radius: 39px 0px;
+    text-transform: capitalize;
+
+
+
    
 
 }
@@ -26,6 +32,7 @@ body{
     background-image: url('Web%201920%20%E2%80%93%201.svg');
     background-repeat: no-repeat;
     background-size: cover;
+    text-transform: capitalize;
   
 }
 .nav{
@@ -60,7 +67,13 @@ form{
     text-align: center;
 
 }
-#emailHelp{
+#emailHelp a{
+    color: #184D47;
+    font: normal normal  Segoe UI;
+    margin-top: 20px;
+
+}
+#emailHelp {
     color: #184D47;
     font: normal normal  Segoe UI;
     margin-top: 20px;
@@ -147,6 +160,16 @@ form{
     color: #184D47;
     border-bottom: 3px solid rgb(15, 75, 52)!important;
     
+
+}
+.btn-light{
+    border-radius: 36px;
+    background-color: none;
+    width: 100px;
+    color: #184D47;
+    font: normal normal bold 18px/28px Segoe UI;
+    outline: none;
+    border: none;
 
 }
 
