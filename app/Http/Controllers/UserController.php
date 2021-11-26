@@ -28,21 +28,20 @@ class UserController extends Controller
     }
     public function login( Request $request )
     {
-        $attributes=request()->validate([
-        
+        $attributes = request()->validate([
+
             'email'=>'required|email',
             'password'=>'required'
         ]);
 
         if(auth()->attempt($attributes))
         {
-           return view('/test'); 
+           return view('dashboard');
         }
-       
-         throw  ValidationException::withMessages(['password'=>'Please Make Sure of your E-mail and Password '] );
-      
+
+        throw  ValidationException::withMessages(['password'=>'Please Make Sure of your E-mail and Password '] );
     }
 
-   
+
 
 }

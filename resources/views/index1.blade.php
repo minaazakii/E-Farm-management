@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link  rel="stylesheet" href="css/index1.css">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link  rel="stylesheet" href="assets/css/index1.css">
 
 
 
     <title>login</title>
 </head>
-<body style="background-image: url('photos/bgindex1.svg');">
+<body style="background-image: url('assets/photos/bgindex1.svg');">
 
     <div class="container-fluid">
         <div class="container">
@@ -65,7 +65,7 @@
         firstTab.show()
       </script> -->
 
-      
+
 
           <div class="container big">
             <div class="row">
@@ -75,7 +75,7 @@
 
               <div class="col-xl-5 col-lg-12  d-none d-sm-block position-relative" >
 
-              <img class="position-absolute top-50 start-0 translate-middle-y" src="photos/left img index1.svg" width="100%">
+              <img class="position-absolute top-50 start-0 translate-middle-y" src="assets/photos/left img index1.svg" width="100%">
               </div>
               <div class="col-xl-5 col-lg-12 col-sm-12">
 
@@ -89,23 +89,22 @@
                 <div class="container-fluid d-flex justify-content-start ">
                 <form id="myform1" method="POST"  action="{{ route('login') }}"  >
                   @csrf
-              
+
                   <div class="mb-3">
                     <input type="email" name="email" class="form-control"  value="{{old('email')}}"    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="User Name or E-mail"  >
-                   
+
                    @error('email')
-                   <div class="form-group">{{$message}}</div>
+                   <div class=" text-danger form-group">{{ $message }}</div>
                    @enderror
-                   
-                    
-  
-                 
+
+
+
                   </div>
                   <div class="mb-3 input-group">
                     <input type="password" name="password" id="myinput"  value="{{old('password')}}"  class="form-control" placeholder="Password" aria-label="Recipient's username" aria-describedby="button-addon2" >
- 
-                    
-                    
+
+
+
 
                     <button onclick="myFunction()"  class="btn btn-outline-secondary" type="button" id="button-addon2"> <i id="hide1" class="bi bi-eye-slash-fill"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
                       <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7.029 7.029 0 0 0 2.79-.588zM5.21 3.088A7.028 7.028 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474L5.21 3.089z"/>
@@ -116,15 +115,15 @@
                       <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                     </svg></i>
 
-                  
+
 
                   </button>
                   </div>
 
                   @error('password')
-                    <div class="form-group ">{{ $message }}</div>
+                    <div class="text-danger form-group ">{{ $message }}</div>
                    @enderror
-            
+
                   <div id="emailHelp" class="form-text">
                     <a href="#" style="text-decoration: none;">
                     In case you forget password ? </a>
@@ -142,7 +141,7 @@
                 </form>
 
                 </div>
-                <div class="d-flex justify-content-center"><img src="photos/or index1.svg" width="50%"></div>
+                <div class="d-flex justify-content-center"><img src="assets/photos/or index1.svg" width="50%"></div>
                 <div class="d-flex justify-content-center">
 
 
@@ -229,7 +228,7 @@
                   </form>
 
                   </div>
-                  <div class="d-flex justify-content-center"><img src="photos/or index1.svg" width="50%"></div>
+                  <div class="d-flex justify-content-center"><img src="assets/photos/or index1.svg" width="50%"></div>
                   <div class="d-flex justify-content-center">
 
 
@@ -264,8 +263,8 @@
 
 
 
-<script src="js/index1js.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="assets/js/index1js.js"></script>
+<script src="assets/js/bootstrap.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
 {{-- Store User --}}

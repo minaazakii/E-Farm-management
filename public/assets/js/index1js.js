@@ -16,7 +16,7 @@ function myFunction() {
   }
   function myFunctionn() {
 
-var xx = document.getElementById("myinputt2");
+var xx = document.getElementById("myinputt");
 var yy = document.getElementById("hide11");
 var zz = document.getElementById("hide22");
 if (xx.type === "password") {
