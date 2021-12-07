@@ -48,7 +48,7 @@ var barColors = [
 new Chart("Chart", {
   type: "doughnut",
   data: {
-   
+
     datasets: [{
       backgroundColor: barColors,
       data: oValues
@@ -68,7 +68,7 @@ var barColors = [
 new Chart("secondchart", {
   type: "doughnut",
   data: {
-   
+
     datasets: [{
       backgroundColor: barColors,
       data: bValues

@@ -16,12 +16,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/','index1')->name('index');
-
+Route::view('/','loginReg')->name('index');
+Route::get('/test',[UserController::class,'test'])->name('test');
 
 //User Routes
 Route::POST('/user/store',[UserController::class,'store'])->name('user.store');
 Route::POST('/home',[UserController::class,'login'])->name('login');
+
 
 
 //dashboard Routes

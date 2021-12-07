@@ -84,8 +84,10 @@
 
                 <div class="d-flex justify-content-center  ">
                     <h3>Welcome!</h3>
-
                 </div>
+                @error('error')
+                    <div id="message" class="alert-danger border-1 rounded p-2 text-center">{{ $message }}</div>
+                @enderror
                 <div class="container-fluid d-flex justify-content-start ">
                 <form id="myform1" method="POST"  action="{{ route('login') }}"  >
                   @csrf
@@ -120,9 +122,7 @@
                   </button>
                   </div>
 
-                  @error('password')
-                    <div class="text-danger form-group ">{{ $message }}</div>
-                   @enderror
+
 
                   <div id="emailHelp" class="form-text">
                     <a href="#" style="text-decoration: none;">
@@ -303,6 +303,12 @@
     });
 </script>
 
+
+<script>
+    setTimeout(() => {
+        $("#message").fadeOut('slow').empty();
+    }, 3000);
+</script>
 
 
 

@@ -380,8 +380,6 @@
 
 
 
-
-
     <script>
       function showmenu(){
         document.getElementById("sidenav").style.left = "10px";
@@ -552,11 +550,13 @@
 
 
 
-
-
+    <script>
+    </script>
 
     <script src="./assets/js/dashboard.js"></script>
 
     <script src="./assets/js/bootstrap.js"></script>
+
+
 </body>
 </html>
