@@ -166,7 +166,7 @@ return [
          * Package Service Providers...
          */
 
-        /*
+        /*composer require kreait/firebase-php
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
