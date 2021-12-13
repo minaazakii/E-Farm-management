@@ -293,11 +293,11 @@
             },
             error:function(error)
             {
+                console.log(error);
                 alert('Wrong Data input');
                 $('#nameError').text(error.responseJSON.errors.name);
                 $('#emailError').text(error.responseJSON.errors.email);
                 $('#passwordError').text(error.responseJSON.errors.password);
-                console.log(error);
             }
         });
     });
