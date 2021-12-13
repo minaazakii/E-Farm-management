@@ -25,7 +25,7 @@ class UserController extends Controller
         $this->validate($request,
         [
             'name'=>'required',
-            'email'=>'required|unique:App\Models\User,email',
+            'email'=>'required',
             'password'=>'required|confirmed'
         ]);
 
@@ -33,30 +33,50 @@ class UserController extends Controller
         [
             'name' => $request->name,
             'email' => $request->email,
-            'password' =>Hash::make($request->password),
+            'password' =>$request->password,
         ];
 
         $userRef = $this->database->getReference($this->tablename)->push($userData);
 
         return response()->json();
     }
+    
     public function login(Request $request)
     {
         $attributes = request()->validate([
 
-            'email'=>'required|email',
+            'email'=>'required',
             'password'=>'required'
         ]);
+        
+        $users=$this->database->getReference($this->tablename)->getvalue();
 
-        if(auth()->attempt($attributes))
+        //ddd($request->all());
+
+
+        $logedinuser=[];
+        
+        foreach($users as $user)
         {
-           return view('dashboard');
+            if($user['email'] ="marwa.mamm79@gmail.com" && $user['password'] == "12345" )
+            {  
+                 ddd('sucess');
+                $logedinuser['email'] = $user['email'];
+                $logedinuser['password'] = $user['password'];
+
+                //return view('test',compact('logedinuser'));
+               
+            }else
+            {   //ddd('failed');
+                return view('test',compact('logedinuser'));
+            }
         }
 
-        throw  ValidationException::withMessages(['error'=>'Wrong E-mail or Password'] );
+    
+
+       //throw  ValidationException::withMessages(['error'=>'Wrong E-mail or Password'] );
     }
-
-
+   
 
 
 }
