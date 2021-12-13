@@ -85,12 +85,18 @@
                 <div class="d-flex justify-content-center  ">
                     <h3>Welcome!</h3>
                 </div>
+
                 @error('error')
                     <div id="message" class="alert-danger border-1 rounded p-2 text-center">{{ $message }}</div>
                 @enderror
+
                 <div class="container-fluid d-flex justify-content-start ">
-                <form id="myform1" method="POST"  action="{{ route('login') }}"  >
+                <form id="myform1" action="{{ route('login') }}" method="POST" >
                   @csrf
+
+                    @if(session('error'))
+                    <div id="message" class="alert-danger rounded text-center"> {{ session('error') }} </div>
+                    @endif
 
                   <div class="mb-3">
                     <input type="email" name="email" class="form-control"  value="{{old('email')}}"    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="User Name or E-mail"  >
@@ -100,12 +106,9 @@
                    @enderror
 
 
-
                   </div>
                   <div class="mb-3 input-group">
                     <input type="password" name="password" id="myinput"  value="{{old('password')}}"  class="form-control" placeholder="Password" aria-label="Recipient's username" aria-describedby="button-addon2" >
-
-
 
 
                     <button onclick="myFunction()"  class="btn btn-outline-secondary" type="button" id="button-addon2"> <i id="hide1" class="bi bi-eye-slash-fill"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
@@ -117,11 +120,12 @@
                       <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
                     </svg></i>
 
-
-
                   </button>
                   </div>
 
+                  @error('password')
+                    <div class=" text-danger form-group">{{ $message }}</div>
+                @enderror
 
 
                   <div id="emailHelp" class="form-text">

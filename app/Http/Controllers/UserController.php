@@ -40,7 +40,7 @@ class UserController extends Controller
 
         return response()->json();
     }
-    
+
     public function login(Request $request)
     {
         $attributes = request()->validate([
@@ -48,35 +48,33 @@ class UserController extends Controller
             'email'=>'required',
             'password'=>'required'
         ]);
-        
-        $users=$this->database->getReference($this->tablename)->getvalue();
 
-        //ddd($request->all());
-
-
-        $logedinuser=[];
-        
+        $users=$this->database->getReference($this->tablename)->getSnapShot()->getvalue();
+        $loggedUser =[];
         foreach($users as $user)
         {
-            if($user['email'] ="marwa.mamm79@gmail.com" && $user['password'] == "12345" )
-            {  
-                 ddd('sucess');
-                $logedinuser['email'] = $user['email'];
-                $logedinuser['password'] = $user['password'];
+           if($user['email'] == $request->email && $user['password'] == $request->password)
+           {
+               $loggedUser['email'] = $user['email'];
+               $loggedUser['password'] = $user['password'];
+           }
 
-                //return view('test',compact('logedinuser'));
-               
-            }else
-            {   //ddd('failed');
-                return view('test',compact('logedinuser'));
-            }
         }
 
-    
+        if(!empty($loggedUser))
+        {
+            return view('dashboard',
+            [
+                'user'=>$loggedUser
+            ]);
+        }
+        return redirect()->route('index')->with('error','Wrong Email or Password');
+
+
 
        //throw  ValidationException::withMessages(['error'=>'Wrong E-mail or Password'] );
     }
-   
+
 
 
 }
