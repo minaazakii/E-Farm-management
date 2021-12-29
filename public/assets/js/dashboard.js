@@ -1,5 +1,5 @@
-var xValues = [10,20, 30 ,40, 50 ,60, 70, 80, 90 ];
-var yValues = [90, 30,70 ,20, 50, 40, 80 ,20,10];
+// var xValues = [10,20, 30 ,40, 50 ,60, 70, 80, 90 ];
+// var yValues = [90, 30,70 ,20, 50, 40, 80 ,20,10];
 var barColors = [
   "rgb(59, 81, 47)",
   "rgb(81, 113, 65)",
@@ -17,7 +17,7 @@ new Chart("myChart", {
     labels: xValues,
     datasets: [{
       backgroundColor: barColors,
-      data: yValues
+      data: yValues,
     }]
   },
   options: {
@@ -25,7 +25,7 @@ new Chart("myChart", {
     scales: {
       yAxes: [{
         ticks: {
-          beginAtZero: true
+          beginAtZero: true,
         }
       }],
     }
@@ -33,17 +33,11 @@ new Chart("myChart", {
 });
 
 
-var iValues = [10,20, 30 ,40, 50 ,60, 70, 80, 90 ];;
-var oValues = [100, 100,100 ,100, 100, 100, 100,100,100];
+var iValues = [10];
+var oValues = [humidity,humidityRemain];
 var barColors = [
   "rgb(59, 81, 47)",
-  "rgb(81, 113, 65)",
-  "rgb(93, 130, 74)",
-  "rgb(102, 146, 84) ",
- " rgb(113, 162, 93)",
- "rgb(127, 171, 109)",
- "rgb(141, 181, 125)",
- "rgb(169, 199, 158)"];
+ ];
 
 new Chart("Chart", {
   type: "doughnut",

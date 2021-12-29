@@ -21,7 +21,6 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-
         $this->validate($request,
         [
             'name'=>'required',
@@ -33,7 +32,7 @@ class UserController extends Controller
         [
             'name' => $request->name,
             'email' => $request->email,
-            'password' =>$request->password,
+            'password' =>Hash::make($request->password),
         ];
 
         $userRef = $this->database->getReference($this->tablename)->push($userData);
@@ -53,8 +52,9 @@ class UserController extends Controller
         $loggedUser =[];
         foreach($users as $user)
         {
-           if($user['email'] == $request->email && $user['password'] == $request->password)
+           if($user['email'] == $request->email && Hash::check($request->password , $user['password']))
            {
+               $loggedUser['name'] = $user['name'];
                $loggedUser['email'] = $user['email'];
                $loggedUser['password'] = $user['password'];
            }
@@ -63,10 +63,7 @@ class UserController extends Controller
 
         if(!empty($loggedUser))
         {
-            return view('dashboard',
-            [
-                'user'=>$loggedUser
-            ]);
+            return redirect()->route('dashboard.index')->with('user',$loggedUser);
         }
         return redirect()->route('index')->with('error','Wrong Email or Password');
 

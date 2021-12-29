@@ -32,7 +32,7 @@
 
                 <div class="col-8 ">
                   <div class="card-body ">
-                    <h6 class="card-title">Amira Zakaria</h6>
+                    <h6 class="card-title">Amira Zakaria </h6>
                     <h6 class="card-title">Alexanderia,Egypt</h6>
                   </div>
 
@@ -551,11 +551,16 @@
 
 
     <script>
+        // Charts Data
+
+        var xValues = {!! $xValues !!}
+        var yValues = {!! $yValues !!}
+        var humidity = {!! $humidity !!}
+        var humidityRemain = {!! $humidityRemain !!}
     </script>
 
     <script src="./assets/js/dashboard.js"></script>
 
-    <script src="./assets/js/bootstrap.js"></script>
 
 
 </body>
