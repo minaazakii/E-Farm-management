@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dashboard</title>
-    <link rel="stylesheet" href="./assets/css/bootstrap.css">
-    <link  rel="stylesheet" href="./assets/css/dashboard.css">
+    <link rel="stylesheet" href="{{ asset('./assets/css/bootstrap.css') }}">
+    <link  rel="stylesheet" href="{{ asset('./assets/css/dashboard.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sakkal Majalla">
@@ -25,7 +25,7 @@
             <div class="card  " style="background-color: #184D47; border-color:#184D47;  " >
               <div class="row g-0">
                 <div class="col-4">
-                  <img src="./assets/photos/amira.jpg" class="img-fluid  mypic" >
+                  <img src="{{ asset('./assets/photos/amira.jpg') }}" class="img-fluid  mypic" >
 
 
                 </div>
@@ -77,7 +77,7 @@
                   </div>
               </div>
               <div id="toggleside" onclick="showmenu();">
-                <img src="./assets/photos/menu.png" alt="">
+                <img src="{{ asset('./assets/photos/menu.png') }}" alt="">
               </div>
               <div class="col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12   - thebody">
 
@@ -104,7 +104,7 @@
                         <div class="card mt-3 mb-3   photocard " style="width: 100%;">
                           <div class="row g-0 ">
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm- col-xs-    ">
-                              <img src="./assets/photos/dashboard.svg" class="img-fluid  " alt="...">
+                              <img src="{{ asset('./assets/photos/dashboard.svg') }}" class="img-fluid  " alt="...">
                             </div>
                             <div class="col-xl-8 col-lg-8 col-md-8 col-sm- col-xs-">
                               <div class="card-body">
@@ -136,7 +136,7 @@
                                 <div class="card-body" style="margin-top: 0px;"  >
                                   <div class="row g-0">
                                     <div class="col-md-7 position-relative" >
-                                    <img src="./assets/photos/temp.jpg" class="myimg myimg position-absolute top-50 start-50 translate-middle" >
+                                    <img src="{{ asset('./assets/photos/temp.jpg') }}" class="myimg myimg position-absolute top-50 start-50 translate-middle" >
                                       <canvas id="Chart" style="width:100%;max-width:600px"></canvas>
 
                                       </div>
@@ -155,13 +155,13 @@
                             <div class="row">
 
                               <div class="col-12" style="width: 100%;"><div class="card text-dark mb-3 photocard " style="width: 100%; ">
-                                <div class="card-header bg-transparent">PH <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eyedropper" viewBox="0 0 16 16">
+                                <div class="card-header bg-transparent">Soil Moisture <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eyedropper" viewBox="0 0 16 16">
                                   <path d="M13.354.646a1.207 1.207 0 0 0-1.708 0L8.5 3.793l-.646-.647a.5.5 0 1 0-.708.708L8.293 5l-7.147 7.146A.5.5 0 0 0 1 12.5v1.793l-.854.853a.5.5 0 1 0 .708.707L1.707 15H3.5a.5.5 0 0 0 .354-.146L11 7.707l1.146 1.147a.5.5 0 0 0 .708-.708l-.647-.646 3.147-3.146a1.207 1.207 0 0 0 0-1.708l-2-2zM2 12.707l7-7L10.293 7l-7 7H2v-1.293z"/>
                                 </svg></div>
                                 <div class="card-body " style="margin-top: 0px;" >
                                   <div class="row g-0">
                                     <div class="col-md-7 position-relative ">
-                                    <img src="./assets/photos/empty.jpg" class="myimg position-absolute top-50 start-50 translate-middle" >
+                                    <img src="{{ asset('./assets/photos/empty.jpg') }}" class="myimg position-absolute top-50 start-50 translate-middle" >
                                       <canvas id="secondchart" style="width:100%;max-width:600px"></canvas>
 
                                       </div>
@@ -270,52 +270,52 @@
                         <div class="row justify-content-start  p-0 mt-4" id="weather">
                             <div class="col-3  p-0 ">
                                 <p class=" ">
-                                    14<sup> &deg; <sup>c</sup> </sup>
+                                    {{ $currentTemp }}<sup> &deg; <sup>c</sup> </sup>
                                     <br>
                                     <span>
-                                        it's windy
+                                        {{ $weatherDisc }}
                                     </span>
                                 </p>
                             </div>
 
                             <div class="col-4 p-0 pt-2  ">
-                                <img src="./assets/photos/cloud and sun.svg"  alt="" id="weatherimg">
+                                <img src="{{ $img }}"  alt="" id="weatherimg">
                             </div>
                             <div class="col-5  p-0">
                                 <div id="miniweather">
                                     <div class="">
-                                        Morning
+                                        Max
                                     </div>
                                     <p class="">
-                                        13<sup> &deg; &#67;</sup>
+                                        {{ $maxTemp }}<sup> &deg; &#67;</sup>
 
                                     </p>
                                     <div class=" ">
-                                        <img src="./assets/photos/weather1.png" alt="">
+                                        <img src="{{ asset('./assets/photos/weather1.png') }}" alt="">
                                     </div>
                                 </div>
                                 <div id="miniweather">
                                     <div class="">
-                                        Evening
+                                        Min
                                     </div>
                                     <p class="">
-                                        13<sup> &deg; &#67;</sup>
+                                        {{ $minTemp }}<sup> &deg; &#67;</sup>
 
                                     </p>
                                     <div class=" ">
-                                        <img src="./assets/photos/weather2.png" alt="">
+                                        <img src="{{ asset('./assets/photos/weather2.png') }}" alt="">
                                     </div>
                                 </div>
                                 <div id="miniweather">
                                     <div class="">
-                                        Night
+                                        Feel's Like
                                     </div>
                                     <p class="">
-                                        13<sup> &deg; &#67;</sup>
+                                        {{ $feelsLikeTemp }}<sup> &deg; &#67;</sup>
 
                                     </p>
                                     <div class=" ">
-                                        <img src="./assets/photos/weather3.png" alt="">
+                                        <img src="{{ asset('./assets/photos/weather3.png') }}" alt="">
                                     </div>
                                 </div>
 
@@ -557,9 +557,11 @@
         var yValues = {!! $yValues !!}
         var humidity = {!! $humidity !!}
         var humidityRemain = {!! $humidityRemain !!}
+        var soil = {!! $soil !!}
+        var soilRemain = {!! $soilRemain !!}
     </script>
 
-    <script src="./assets/js/dashboard.js"></script>
+    <script src="{{ asset('./assets/js/dashboard.js') }}"></script>
 
 
 

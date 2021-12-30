@@ -33,7 +33,7 @@ new Chart("myChart", {
 });
 
 
-var iValues = [10];
+var iValues = ["Humidity","Remaining"];
 var oValues = [humidity,humidityRemain];
 var barColors = [
   "rgb(59, 81, 47)",
@@ -42,7 +42,6 @@ var barColors = [
 new Chart("Chart", {
   type: "doughnut",
   data: {
-
     datasets: [{
       backgroundColor: barColors,
       data: oValues
@@ -51,11 +50,10 @@ new Chart("Chart", {
 
 });
 
-var aValues = ["1", "2", "3", "4"];
-var bValues = [55, 49, 44, 24];
+var aValues = ["Soil Moist"];
+var bValues = [soil,soilRemain];
 var barColors = [
   "rgb(59, 81, 47)",
-  "rgb(93, 130, 74)",
 
 ];
 
