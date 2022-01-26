@@ -32,12 +32,12 @@
 
                 <div class="col-8 ">
                   <div class="card-body ">
-                    <h6 class="card-title">Amira Zakaria </h6>
-                    <h6 class="card-title">Alexanderia,Egypt</h6>
+                    <h6 class="card-title">{{ $user['name'] }} </h6>
+                    <h6 class="card-title">{{ $user['email'] }}</h6>
                   </div>
 
                 </div>
-                <div class="row"><a href="#" onclick="return myFunction();" id="pic" ><small>Edit your pic</small></a></div>
+                <div class="row"><a href="#" onclick="return myFunction();" id="pic" ><small>Edit Your Picture</small></a></div>
               </div>
             </div>
                     <a href="#about" class="list-group-item list-group-item-action" style="color:   #184D47;" >  <svg style="color:#184D47" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
@@ -284,38 +284,38 @@
                             <div class="col-5  p-0">
                                 <div id="miniweather">
                                     <div class="">
-                                        Max
+                                        {{ $day1Disc }}
                                     </div>
                                     <p class="">
-                                        {{ $maxTemp }}<sup> &deg; &#67;</sup>
+                                        {{ $day1Temp }}<sup> &deg; &#67;</sup>
 
                                     </p>
                                     <div class=" ">
-                                        <img src="{{ asset('./assets/photos/weather1.png') }}" alt="">
+                                        <img src="{{ $day1Img }}" alt="">
                                     </div>
                                 </div>
                                 <div id="miniweather">
                                     <div class="">
-                                        Min
+                                        {{ $day2Disc }}
                                     </div>
                                     <p class="">
-                                        {{ $minTemp }}<sup> &deg; &#67;</sup>
+                                       {{ $day2Temp }}<sup> &deg; &#67;</sup>
 
                                     </p>
                                     <div class=" ">
-                                        <img src="{{ asset('./assets/photos/weather2.png') }}" alt="">
+                                        <img src= "{{ $day2Img  }}" alt="">
                                     </div>
                                 </div>
                                 <div id="miniweather">
                                     <div class="">
-                                        Feel's Like
+                                        {{ $day3Disc }}
                                     </div>
                                     <p class="">
-                                        {{ $feelsLikeTemp }}<sup> &deg; &#67;</sup>
+                                        {{ $day3Temp }}<sup> &deg; &#67;</sup>
 
                                     </p>
                                     <div class=" ">
-                                        <img src="{{ asset('./assets/photos/weather3.png') }}" alt="">
+                                        <img src="{{ $day3Img }}" alt="">
                                     </div>
                                 </div>
 

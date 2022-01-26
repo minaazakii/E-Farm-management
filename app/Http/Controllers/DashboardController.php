@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Kreait\Firebase\Database;
 use Illuminate\Support\Facades\Http;
 
@@ -15,7 +16,11 @@ class DashboardController extends Controller
     }
     public function index()
     {
-        $user = session('user');
+        $user =
+        [
+            'name'=>Cookie::get('name'),
+            'email'=>Cookie::get('email')
+        ] ;
 
         //********************************Temperature Chart Data **********************************//
 
@@ -90,25 +95,45 @@ class DashboardController extends Controller
 
        //****************************************************** API Weather Data **********************************************************//
 
-       $response = Http::get('http://api.openweathermap.org/data/2.5/weather?q=alexandria&units=celsius&appid=f6698169bddf08cb2d772b7da17d943c');
-       $icon = $response->json('weather.0.icon');
-       $img = 'http://openweathermap.org/img/wn/'.$icon.'@2x.png';
+       $response = Http::get('https://api.openweathermap.org/data/2.5/onecall?lat=26.820553&lon=30.802498&exclude=minutely,hourly&appid=f6698169bddf08cb2d772b7da17d943c');
+      // $response = Http::get('https://api.openweathermap.org/data/2.5/weather?q=Egypt&units=celsius&appid=f6698169bddf08cb2d772b7da17d943c');
        $currentTemp ='Failed To Get Tempreature';
-       $maxTemp = 'Failed To Get Tempreature';
-       $minTemp = 'Failed To Get Tempreature';
-       $feelsLikeTemp = 'Failed To Get Tempreature';
+       $icon = $response->json('current.weather.0.icon');
+       $img = 'http://openweathermap.org/img/wn/'.$icon.'@2x.png';
        $weatherDisc ='Failed To Get Description';
+       $day1Temp = 'Failed To Get Tempreature';
+       $day1Icon = '';
+       $day1img = 'Failed To Get Image';
+       $day1Disc = 'Failed To Get Description';
+       $day2Temp = 'Failed To Get Tempreature';
+       $day2Icon = '';
+       $day2img = 'Failed To Get Image';
+       $day2Disc = 'Failed To Get Description';
+       $day3Temp = 'Failed To Get Tempreature';
+       $day3Icon = '';
+       $day3img = 'Failed To Get Image';
+       $day3Disc = 'Failed To Get Description';
        if($response->successful())
        {
-        $currentTemp = round($response->json('main.temp')-273.15) ;
-        $maxTemp =  round($response->json('main.temp_max')-273.15);
-        $minTemp = round($response->json('main.temp_min')-273.15);
-        $feelsLikeTemp = round($response->json('main.feels_like')-273.15);
-        $weatherDisc = $response->json('weather.0.description');
+        $currentTemp = round($response->json('current.temp')-273.15) ;
+        $icon = $response->json('current.weather.0.icon');
+        $img = 'http://openweathermap.org/img/wn/'.$icon.'@2x.png';
+        $weatherDisc = $response->json('current.weather.0.description');
+        $day1Temp =round($response->json('daily.0.temp.day')-273.15);
+        $day1Icon = $response->json('daily.0.weather.0.icon');
+        $day1Img = 'http://openweathermap.org/img/wn/'.$day1Icon.'@2x.png';
+        $day1Disc = $response->json('daily.0.weather.0.description');
+        $day2Temp =round($response->json('daily.1.temp.day')-273.15);
+        $day2Icon = $response->json('daily.1.weather.0.icon');
+        $day2Img = 'http://openweathermap.org/img/wn/'.$day2Icon.'@2x.png';
+        $day2Disc = $response->json('daily.1.weather.0.description');
+        $day3Temp =round($response->json('daily.2.temp.day')-273.15);
+        $day3Icon = $response->json('daily.2.weather.0.icon');
+        $day3Img = 'http://openweathermap.org/img/wn/'.$day3Icon.'@2x.png';
+        $day3Disc = $response->json('daily.2.weather.0.description');
        }
 
        //****************************************************** End API Weather Data **********************************************************//
-
         return view('dashboard',
         [
             'user'=>$user,
@@ -119,11 +144,17 @@ class DashboardController extends Controller
             'soil'=> json_encode($soil),
             'soilRemain'=> json_encode($soilRemain),
             'currentTemp'=>$currentTemp,
-            'maxTemp'=>$maxTemp,
-            'minTemp'=>$minTemp,
-            'feelsLikeTemp'=>$feelsLikeTemp,
             'weatherDisc' => $weatherDisc,
-            'img'=>$img
+            'img'=>$img,
+            'day1Temp'=>$day1Temp,
+            'day1Img' =>$day1Img,
+            'day1Disc'=> $day1Disc,
+            'day2Temp'=>$day2Temp,
+            'day2Img' =>$day2Img,
+            'day2Disc'=> $day2Disc,
+            'day3Temp'=>$day3Temp,
+            'day3Img' =>$day3Img,
+            'day3Disc'=> $day3Disc
 
         ]);
     }
