@@ -1,0 +1,361 @@
+*{
+    padding: 0;
+    margin: 0;
+  }
+  #toggleside{
+    display: none;
+    position: absolute;
+  }
+  #closemenu{
+    display: none;
+    position: absolute;
+  }
+  
+  
+  body{
+    overflow-y: hidden;
+  }
+  .sidenav {
+    height: 100%;
+    
+    z-index: 1;
+    top: 0;
+    margin-left: -12px;
+    background-color: #184D47;
+    overflow-x: hidden;
+    padding-top: 20px;
+  
+  }
+  
+  .sidenav a :visited {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    text-align: left;
+    font: normal normal normal 22px/40px Sakkal Majalla;
+    letter-spacing: 0px;
+    background-color: #9ea19c;
+    opacity: 1;
+    display: block;
+  }
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    text-align: left;
+    font: normal normal normal 20px/38.9px Sakkal Majalla;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+    display: block;
+  }
+  .mypic{
+  border-radius: 100%;
+  }
+  .card-body h6{
+  
+    text-align: left;
+  font: normal normal bold 14px/15px Sakkal Majalla;
+  letter-spacing: 0px;
+  color: #D6EFC7;
+  }
+  .card-body{
+    margin-top: 10px;
+  }
+  .list-group-item-action{
+  border-color: white;
+  color:#184D47;
+  
+  
+  }
+  svg{
+  margin-right: 10px;
+  }
+  .photocard{
+  border-radius: 52px;
+  }
+  .photocard div div  img{
+  border-radius: 52px;
+  }
+  
+  
+  .myimg{
+  position: absolute;
+  border-radius: 90px;
+  width: 28%;
+  
+  
+  }
+  .row{
+  width: 100%;
+  
+  }
+  .card-header{
+  padding-left: 35px;
+  text-align: left;
+  font: normal normal bold 21px/37px Sakkal Majalla;
+  letter-spacing: 0px;
+  color: #060606;
+  opacity: 1;
+  }
+  .card-header svg{
+  float: right;
+  margin-top: 3px;
+  color: #060606;
+  width: 40px;
+  height: 29px;
+  }
+  .form-control{
+    border-right: none;
+  }
+  .aroundmg{
+  border-radius: 5px;
+border: solid 2px;
+outline: none;
+
+  margin-left: 10px;
+  background-color: white;
+  text-align: center;
+  border-color: #184D47;
+  
+  }
+  .card{
+    box-shadow: 0px 1px 4px #184D47;
+    border: 1px solid #184D47;
+    }
+    .card-text{
+    text-align: left;
+    font: normal normal normal 17px/22px Sakkal Majalla;
+    letter-spacing: 0px;
+    color: #184D47;
+    opacity: 1
+    }
+    #pic small{
+    text-align: left;
+    margin-top: -10px;
+    font-size: 15px;
+    color: #D6EFC7;
+    opacity: 0.53;
+    }
+    #pic{
+    
+      margin-top: -15px;
+    
+    }
+.over{
+ 
+    padding-left: 15px;
+  
+}
+.cont{
+    margin-top: 30px;
+   
+height: 90px;
+background: #7070700a ;
+text-align: right;
+
+border-radius: 32px;
+}
+
+
+.cont div{
+  padding-top: 40px;
+    font: normal normal bold 30px/4px Akhbar MT;
+letter-spacing: 0px;
+color: #184D47;
+
+}
+.cont .smaller{
+text-align: right;
+  font: normal normal bold 18px/2px Akhbar MT;
+  padding-top: 42px;
+}
+.yellowdiv , .whitediv{
+  background: #96BB7C 0% 0% no-repeat padding-box;
+border-radius: 30px;
+display: flex;
+opacity: 1;
+}
+.new{
+  padding-top: 30px;
+}
+.whitediv{
+  background: #ffffff ;
+  color: #184D47;
+  display: block;
+
+ 
+
+}
+.whitediv p{
+  color: #184D47;
+  font: normal normal bold 15px Arial;
+  opacity: 0.8;
+
+}
+.textdiv{
+  color: #184D47;
+  font: normal normal bold 15px Arial;
+  margin-top: 10px;
+  text-align: center;
+
+}
+
+.textdiv span{
+  color: #f4fffeaf;
+  font: normal normal bold 15px Arial;
+  text-align: center;
+
+}
+
+
+.day p {
+  color: #15423d;
+  font: normal normal bold 17px Arial;
+  margin-left: 10px;
+
+}
+
+.currentday img{
+width: 50%;
+margin-left: -35px;
+opacity: 100%;
+margin-right: 10px;
+
+}
+
+#create{
+  cursor: pointer;
+  text-decoration: none;
+}
+#create:hover{
+  color: #060606;
+}
+.create{
+  cursor: pointer;
+  text-decoration: none;
+}
+.create:hover{
+  color: #060606;
+}
+.changediv{
+  display: none;
+}
+.flex-container {
+  flex-wrap: wrap;
+}
+.flex-container div {
+  width: 250px;
+  margin: 10px;
+  text-align: left;
+
+}
+#subject{
+  height: 25px;
+  background: #96BB7C 0% 0% no-repeat padding-box;
+
+}
+#addationnotes{
+  height: 25px;
+  background-color:  rgb(255 255 255 / 15%);
+  margin-bottom: 3px;
+}
+input{
+  border: none;
+  outline: none;
+
+font: normal normal bold 15px/2px Arial;
+letter-spacing: 0px;
+color: #FFFFFF;
+opacity: 0.96;
+}
+
+
+
+.containerd {
+  position: relative;
+}
+
+.bottomright {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  
+}
+.modal-dialog{
+  width: 400px;
+  height: 300px;
+  border-radius: 40px;
+}
+.modal-content {
+  border-radius:30px 0 30px 0 ;
+
+
+  background-color: #91b478;
+  border-color: #91b478;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  
+}
+.form{
+  background-color:  rgb(255 255 255 / 15%);
+  height: 230px;
+  width: 90%;
+  border-radius: 10%;
+  padding-top: 15px;
+}
+.modal-footer , .modal-header {
+border: none;
+margin: 10px;
+}
+
+#green{
+  color: #15423d;
+}
+#green:hover{
+  cursor: pointer;
+}
+#whitesquere{
+display: none;}
+  /* For mobile phones: */
+
+/*the dtails task page */
+
+.currentdayofdetails img{
+  width: 30%;
+  margin-left: -45px;
+  opacity: 100%;
+  margin-right: 10px;
+}
+
+.CHECKLIST{
+color: #FAD586;
+text-align: right;
+}
+
+#hidenold:hover{
+    cursor: pointer;
+      }
+#detailswhite{
+display: none;
+}
+.ment{
+  background-color:#D6EFC7 ;
+}
+.ment1{
+  background-color:#96BB7C ;
+}
+.ment2{
+  background-color:#184D47;
+}
+.btn-success{ background-color:#184D47;
+border-radius: 15px;
+outline: none;
+border: none;
+font: normal normal bold 20px/12px Arial;
+padding: 35px;
+padding-top: 15px;
+padding-bottom: 15px;
+
+letter-spacing: 1px;
+color: #FFFFFF;
+
+}

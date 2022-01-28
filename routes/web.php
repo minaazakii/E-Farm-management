@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SensorController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -29,6 +31,11 @@ Route::POST('/home',[UserController::class,'login'])->name('login');
 Route::GET('/dashboard',[DashboardController::class,'index'])->name('dashboard.index');
 
 
+//sensor Routes
+Route::GET('/sensor',[SensorController::class,'index'])->name('sensor.index');
+
+//tasks Routes
+Route::GET('/tasks',[TaskController::class,'index'])->name('task.index');
 
 
 

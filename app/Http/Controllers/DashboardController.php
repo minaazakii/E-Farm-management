@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cookie;
 use Kreait\Firebase\Database;
+use Stevebauman\Location\Location;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cookie;
 
 class DashboardController extends Controller
 {
@@ -32,7 +33,7 @@ class DashboardController extends Controller
         $dateAndTemps = [];
         //strtok($x, " "); to Remove After text Space
 
-        //To Seprate Date and Temprature
+        //To Seprate Date and Temprature And Remove Time
         foreach ($tempData as $date => $temp)
         {
             $tempDates[] = strtok($date, " ");
@@ -42,7 +43,7 @@ class DashboardController extends Controller
             }
         }
 
-        //To Put Dates and Temp in Same Array
+        //To Put Unique Dates and Last Temp For Each Day
         for ($i=0; $i <count($tempDates) ; $i++)
         {
             $dateAndTemps[$tempDates[$i]] = $temps[$i];
@@ -94,8 +95,9 @@ class DashboardController extends Controller
        //****************************************************** End Soil Moisture Chart**********************************************************//
 
        //****************************************************** API Weather Data **********************************************************//
-
-       $response = Http::get('https://api.openweathermap.org/data/2.5/onecall?lat=26.820553&lon=30.802498&exclude=minutely,hourly&appid=f6698169bddf08cb2d772b7da17d943c');
+       $ip = "24,177,756";
+       $data = \Location::get($ip);
+       $response = Http::get('https://api.openweathermap.org/data/2.5/onecall?lat='.$data->latitude.'&lon='.$data->longitude.'&exclude=minutely,hourly&appid=f6698169bddf08cb2d772b7da17d943c');
       // $response = Http::get('https://api.openweathermap.org/data/2.5/weather?q=Egypt&units=celsius&appid=f6698169bddf08cb2d772b7da17d943c');
        $currentTemp ='Failed To Get Tempreature';
        $icon = $response->json('current.weather.0.icon');
@@ -103,15 +105,15 @@ class DashboardController extends Controller
        $weatherDisc ='Failed To Get Description';
        $day1Temp = 'Failed To Get Tempreature';
        $day1Icon = '';
-       $day1img = 'Failed To Get Image';
+       $day1Img = 'Failed To Get Image';
        $day1Disc = 'Failed To Get Description';
        $day2Temp = 'Failed To Get Tempreature';
        $day2Icon = '';
-       $day2img = 'Failed To Get Image';
+       $day2Img = 'Failed To Get Image';
        $day2Disc = 'Failed To Get Description';
        $day3Temp = 'Failed To Get Tempreature';
        $day3Icon = '';
-       $day3img = 'Failed To Get Image';
+       $day3Img = 'Failed To Get Image';
        $day3Disc = 'Failed To Get Description';
        if($response->successful())
        {

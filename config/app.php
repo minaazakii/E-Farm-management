@@ -162,9 +162,11 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Kreait\Laravel\Firebase\ServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
+        Stevebauman\Location\LocationServiceProvider::class,
 
         /*composer require kreait/firebase-php
          * Application Service Providers...
@@ -228,6 +230,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Location' => 'Stevebauman\Location\Facades\Location',
 
     ],
 
