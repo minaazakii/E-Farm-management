@@ -32,7 +32,7 @@
 
                 <div class="col-8 ">
                   <div class="card-body ">
-                    <h6 class="card-title">Amira Zakaria</h6>
+                    <h6 class="card-title">Amira Zakaria </h6>
                     <h6 class="card-title">Alexanderia,Egypt</h6>
                   </div>
 
@@ -40,7 +40,7 @@
                 <div class="row"><a href="#" onclick="return myFunction();" id="pic" ><small>Edit your pic</small></a></div>
               </div>
             </div>
-                    <a href="{{ route('dashboard.index') }}"   >  <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
+                    <a href="{{ route('dashboard.index') }}"  >  <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
                       <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z"/>
                     </svg> Dashboard</a>
                     <a href="{{ route('task.index') }}" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
@@ -213,7 +213,7 @@
                         <div class="col-6 " id="value">
                             <div class="box ">
                                 <div class="circular-progress">
-                                  <div class="value-container">20 %</div>
+                                  <div class="value-container">95%</div>
                                 </div>
                               </div>
                         </div>
@@ -555,6 +555,8 @@
       </div>
 
     </div>
+
+
     <script>
         var xValues = {!! json_encode($xValues) !!}
         var yValues = {!! json_encode($yValues)  !!}

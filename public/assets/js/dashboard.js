@@ -1,5 +1,4 @@
 /* Dashboard page */
-
 var barColors = [
   "rgb(59, 81, 47)",
   "rgb(81, 113, 65)",
@@ -36,7 +35,7 @@ new Chart("myChart", {
 var oValues = [humidity,humidityRemain];
 var barColors = [
   "rgb(59, 81, 47)",
- ];
+];
 
 new Chart("Chart", {
   type: "doughnut",

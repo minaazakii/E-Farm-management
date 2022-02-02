@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>task</title>
+    <title>Task</title>
     <link rel="stylesheet" href="{{ asset('./assets/css/bootstrap.css') }}">
     <link  rel="stylesheet" href="{{ asset('./assets/css/task.css') }}">
+    <link  rel="stylesheet" href="{{ asset('./assets/css/menu.css') }}">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -15,7 +16,7 @@
 
 </head>
 
-<body >
+<body onload="loaddate()">
 
     <div class="container-fluid " >
 
@@ -42,18 +43,18 @@
                   <div class="row"><a href="#" onclick="return myFunction();" id="pic" ><small>Edit your pic</small></a></div>
                 </div>
               </div>
-
-                      <a href="{{ route('dashboard.index') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
+              <a href="{{ route('dashboard.index') }}"  >  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
+                <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z"/>
+              </svg> Dashbord</a>
+                      <a href="{{ route('task.index') }}" class="list-group-item list-group-item-action" style="color:   #184D47;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list-check" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
-                      </svg>Dashboard</a>
-                      <a href="{{ route('task.index') }}" class="list-group-item list-group-item-action" style="color:   #184D47;" >  <svg style="color:#184D47" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-1x2-fill" viewBox="0 0 16 16">
-                        <path d="M0 1a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm9 0a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1V1zm0 9a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-5a1 1 0 0 1-1-1v-5z"/>
-                      </svg> Tasks</a>
+                      </svg>Tasks</a>
+
                       <a href="{{ route('sensor.index') }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wifi" viewBox="0 0 16 16">
                         <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.444 12.444 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.518.518 0 0 0 .668.05A11.448 11.448 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049z"/>
                         <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.455 9.455 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065zm-2.183 2.183c.226-.226.185-.605-.1-.75A6.473 6.473 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.478 5.478 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091l.016-.015zM9.06 12.44c.196-.196.198-.52-.04-.66A1.99 1.99 0 0 0 8 11.5a1.99 1.99 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"/>
                       </svg>Sensors</a>
-                      <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-sun" viewBox="0 0 16 16">
+                      <a href="#contact"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-sun" viewBox="0 0 16 16">
                         <path d="M7 8a3.5 3.5 0 0 1 3.5 3.555.5.5 0 0 0 .624.492A1.503 1.503 0 0 1 13 13.5a1.5 1.5 0 0 1-1.5 1.5H3a2 2 0 1 1 .1-3.998.5.5 0 0 0 .51-.375A3.502 3.502 0 0 1 7 8zm4.473 3a4.5 4.5 0 0 0-8.72-.99A3 3 0 0 0 3 16h8.5a2.5 2.5 0 0 0 0-5h-.027z"/>
                         <path d="M10.5 1.5a.5.5 0 0 0-1 0v1a.5.5 0 0 0 1 0v-1zm3.743 1.964a.5.5 0 1 0-.707-.707l-.708.707a.5.5 0 0 0 .708.708l.707-.708zm-7.779-.707a.5.5 0 0 0-.707.707l.707.708a.5.5 0 1 0 .708-.708l-.708-.707zm1.734 3.374a2 2 0 1 1 3.296 2.198c.199.281.372.582.516.898a3 3 0 1 0-4.84-3.225c.352.011.696.055 1.028.129zm4.484 4.074c.6.215 1.125.59 1.522 1.072a.5.5 0 0 0 .039-.742l-.707-.707a.5.5 0 0 0-.854.377zM14.5 6.5a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1h-1z"/>
                       </svg>Seasons</a>
@@ -110,130 +111,226 @@
                           </svg></button></div>
 
                       </div>
+
+
+
+
                       <div class="row over"  >
-                      <div class="row cont" >
-                          <div class="col-2" >December</div>
-                          <div class="col-1 " style="padding-top: 32px; text-align: left;" id="up" onclick="hide();"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
-                          </svg></div>
-                          <div class="col-1 " style="padding-top: 32px; text-align: left;" id="down" onclick="show();"> <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-down-circle" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
-                          </svg></div>
-                          <div class= "col-7"> </div>
-                          <div class="col-1 smaller">2022</div>
-                          <div class="col-1" style="padding-top: 30px; text-align: left;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar2-week-fill" viewBox="0 0 16 16">
-                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zm9.954 3H2.545c-.3 0-.545.224-.545.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5zM8.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM3 10.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"/>
-                          </svg></div>
 
-                        </div>
 
+
+                        <div class="accordion" id="accordionExample">
+                            @foreach ($months as $key=>$month )
+
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne{{ $key }}">
+
+
+                              <div class="row cont" >
+                                <div class="col-2" >{{ $month }}</div>
+                                <div class="col-1 button">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne{{ $key }}" aria-expanded="true" aria-controls="collapseOne{{ $key }}">
+                                </button></div>
+                                <div class="col-1 " style="padding-top: 32px; text-align: left;" id="down">
+
+                                </div>
+                                <div class= "col-5"> </div>
+
+                                <div class="col-2 addation" style="padding-top: 26px;"><button type="button" class="btn btn-light" ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                                  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                                </svg>Tap to Add</button></div>
+
+                                <div class="col-1 smaller">2022</div>
+                                <div class="col-1 " style="padding-top: 30px; text-align: left;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar2-week-fill" viewBox="0 0 16 16">
+                                  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zm9.954 3H2.545c-.3 0-.545.224-.545.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5zM8.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM3 10.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"/>
+                                </svg></div>
+
+                              </div>
+
+                            </h2>
+                            <div id="collapseOne{{ $key }}" class="accordion-collapse collapse hide" aria-labelledby="headingOne{{ $key }}" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+
+
+
+    @if($empty == false)
     <div class="container-fluid" id="cont" >
       <div class="row" >
+
+                    @foreach ($tasks as $key => $task )
+                    @if(date('F', strtotime($task['startDate'])) == $month)
                         <div class="row  new  " >
                           <div class="col-1 day  whitediv  " >
-                            <a class="create"  href="dtailstask.html">
-                            <p>Tues</p>
-                            <p class="currentday"> <img src="./assets/photos/plant.svg">16</p></a>
+                            <a class="create"  href="{{ route('taskDetails.index',$key) }}">
+                            <p>{{substr(date('l', strtotime($task['startDate'])),0,3)  }}</p>
+                            <p class="currentday"> <img src="./assets/photos/plant.svg">{{ substr($task['startDate'],-2) }}</p></a>
                          </div>
-<div class="col-10 yellowdiv flex-container " >
+                        <div class="col-10 yellowdiv flex-container " >
                             <div>
                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
                               <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
-                            </svg>  <input id="subject" type="text" name="subject" placeholder="add your task.." >
+                            </svg>  <input id="subject" type="text" name="subject" value="{{ $task['notes'] }}"   >
                           </div>
                             <div></div>
                             <div></div>
                             <div></div>
-</div>
-
                         </div>
 
-                        <div class="row new">
-
-                          <div class="col-1 day whitediv" >
-                            <a class="create" >
-                            <p>sat</p>
-                            <p>13</p></a>
-                          </div>
-
-                          <div class="col-10 whitediv" id="white" style="padding-top: 7px;">
-                            <p>Nothing planned <span id="create"  onclick="change();">Tap to create</a></p>
-
-                          </div>
-                          <div class="col-10 yellowdiv changediv flex-container " id="yellow"   >
-
-                            <div>    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
-                              <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
-                            </svg>  <input id="subject" type="text" name="subject" placeholder="add your task.." ></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-
-
                         </div>
-                      </div>
-
-
-
+                        @endif
+                        @endforeach
                         </div>
                       </div></div>
+        @endif
 
-
-                      <div></div><div></div></div><div></div></div></div>
-                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="btn-close" onclick="clicked();" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <div></div><div></div></div>
+                              </div>
+                              @endforeach
                             </div>
-                            <div class="container ">
-
-                              <div class="row ">
-                                <div class="col-xl-4 col-sm-4 textdiv">Day: <span class="getthevalue">10</span></div>
-                                <div class="col-xl-4 col-sm-4 textdiv">Month: <span class="getthevalue">3</div>
-                                <div class="col-xl-4 col-sm-4 textdiv">Year: <span class="getthevalue">2022</div>
-                              </div>
-                          </div>
-                            <div class="modal-body">
+                          </div></div>
 
 
-                                <div class="container form">
 
-                                  <div class="row">
-                                    <div class="col-xl-12 col-sm-12">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
-                                      <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
-                                    </svg>  <input id="addationnotes" type="text" name="subject" placeholder="add your task.." ></div>
-                                    <div class="col-xl-12 col-sm-12">                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
-                                      <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
-                                    </svg>  <input id="addationnotes" type="text" name="subject" placeholder="add your task.." ></div>
-                                    <div class="col-xl-12 col-sm-12">                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
-                                      <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
-                                    </svg>  <input id="addationnotes" type="text" name="subject" placeholder="add your task.." ></div>
-                                  </div>
-                              </div>
 
-                            <div class="modal-footer">
-                              <div class="container-fluid">
 
-                                <div class="row">
-                                  <div class="col-xl-4 col-sm-4"></div>
-                      <div class="col-xl-4 col-sm-4" > <button type="button" class="btn btn-success btn-lg">Add</button>
+                    <div></div></div></div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Add your mission</h5>
 
-                                  </div>
-                                  <div class="col-xl-4 col-sm-4"></div>
+                                <button type="button" class="btn-close" onclick="clicked();" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                                </div>
+                                <div class="container ">
+                                <form id="form">
+                                    @csrf
+                                <div class="row ">
+                                    <div class="col-xl-4 col-sm-4 textdiv">Type of crop </div>
+                                    <div class="col-xl-8 col-sm-8 textdiv">
+                                    <select id="crops">
+                                    <option value="Tomato">Tomato</option>
+                                    <option value="Potato">Potato</option>
+                                    <option value="Carrot">Carrot</option>
+                                    </select>
+                                    </div>
+                                    <div class="text-danger" id="corpError"></div>
                                 </div>
                             </div>
-                            </div>
-                          </div>
+                                <div class="modal-body">
+
+                                <h4 class="mt-2 ">Start Time</h4>
+
+                                <div class="container mt-4">
+
+                            <div class="row ">
+
+                            <div class="col-xl-2 col-sm-10  textdiv"> Date:</div>
+                            <div class="col-xl-10 col-sm-10 textdivlineday ">
+
+                                <input type="date" id="startDate" class="birthday" >
+                                <div id="startDateError" class="text-danger"></div>
                         </div>
-                      </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+                        <h4 class="mt-5 ">End Time</h4>
+
+                        <div class="container mt-4">
+                        <div class="row ">
+
+                            <div class="col-xl-2 col-sm-10  textdiv"> Date:</div>
+                            <div class="col-xl-10 col-sm-10 textdivlineday ">
+
+                            <input type="date" id="endDate" class="birthday" >
+                                <div id="endDateError" class="text-danger"></div>
+                        </div>
+
+
+
+                        </div>
+                        </div>
+
+            <div class="container form m-3">
+
+              <div class="row">
+                <div class="col-xl-12 col-sm-12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+                  <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+                </svg>  <input id="addationnotes" type="text"  placeholder="add your Notes.." ></div>
+                        <input type="hidden" id="email" value="{{ Cookie::get('email') }}">
+              </div>
+          </div>
+
+        <div class="modal-footer">
+          <div class="container-fluid">
+
+            <div class="row">
+              <div class="col-xl-2 col-sm-2"></div>
+  <div class="col-xl-8 col-sm-2" > <button type="submit" class="btn btn-success btn-lg">ADD</button>
+
+              </div>
+              <div class="col-xl-2 col-sm-2"></div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</form>
 
       <script src="{{ asset('./assets/js/tasks.js') }}"></script>
 
-
-
       <script src="{{ asset('./assets/js/bootstrap.js') }}"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+      <script>
+        $("#form").submit(function(e)
+        {
+            e.preventDefault();
+            let corp = $("#crops").val();
+            let startDate = $("#startDate").val();
+            let endDate = $("#endDate").val();
+            let notes = $("#addationnotes").val();
+            let email = $("#email").val();
+            let _token =$('input[name=_token]').val();
+            console.log(corp)
+            $.ajax({
+                url:'{{ route('task.store') }}',
+                type:'POST',
+                data:{
+                    corp:corp,
+                    startDate:startDate,
+                    endDate:endDate,
+                    notes:notes,
+                    email:email,
+                    _token:_token
+                },
+                success:function(response)
+                {
+                    alert('Task Added')
+                    location.reload();
+                },
+                error:function(error)
+                {
+                    console.log(error)
+                    alert('Wrong Data input')
+                    $('#corpError').text(error.responseJSON.errors.corp);
+                    $('#startDateError').text(error.responseJSON.errors.startDate);
+                    $('#endDateError').text(error.responseJSON.errors.endDate);
+                }
+            })
+        });
+    </script>
 
 
 </body>

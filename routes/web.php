@@ -36,6 +36,10 @@ Route::GET('/sensor',[SensorController::class,'index'])->name('sensor.index');
 
 //tasks Routes
 Route::GET('/tasks',[TaskController::class,'index'])->name('task.index');
+Route::GET('/tasksDetails/{id}',[TaskController::class,'taskDetailsIndex'])->name('taskDetails.index');
+Route::POST('/store/tasksDetails/{id}',[TaskController::class,'storeTaskDetail'])->name('taskDetails.store');
+Route::POST('/tasks/store',[TaskController::class,'store'])->name('task.store');
+
 
 
 

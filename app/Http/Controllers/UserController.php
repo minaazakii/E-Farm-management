@@ -64,8 +64,8 @@ class UserController extends Controller
         if(!empty($loggedUser))
         {
             return redirect()->route('dashboard.index')
-            ->withCookie('name',$loggedUser['name'],15)
-            ->withCookie('email',$loggedUser['email'],15);
+            ->withCookie('name',$loggedUser['name'],60)
+            ->withCookie('email',$loggedUser['email'],60);
         }
         return redirect()->route('index')->with('error','Wrong Email or Password');
 
