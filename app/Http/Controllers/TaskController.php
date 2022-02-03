@@ -96,7 +96,8 @@ class TaskController extends Controller
         [
             'corp' =>'required',
             'startDate' => 'required',
-            'endDate' => 'required|after:startDate'
+            'endDate' => 'required|after:startDate',
+            'notes' => 'required'
         ]);
         $taskData=
         [
@@ -120,7 +121,8 @@ class TaskController extends Controller
         [
             'corp' =>'required',
             'startDate' => 'required',
-            'endDate' => 'required|after:startDate'
+            'endDate' => 'required|after:startDate',
+            'notes' => 'required'
         ]);
         $taskData=
         [

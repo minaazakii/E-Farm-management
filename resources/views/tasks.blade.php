@@ -269,6 +269,7 @@
                         <input type="hidden" id="email" value="{{ Cookie::get('email') }}">
               </div>
           </div>
+          <div id="notesError" class="text-danger"></div>
 
         <div class="modal-footer">
           <div class="container-fluid">
@@ -327,6 +328,7 @@
                     $('#corpError').text(error.responseJSON.errors.corp);
                     $('#startDateError').text(error.responseJSON.errors.startDate);
                     $('#endDateError').text(error.responseJSON.errors.endDate);
+                    $('#notesError').text(error.responseJSON.errors.notes);
                 }
             })
         });
