@@ -213,7 +213,7 @@
                         <div class="col-6 " id="value">
                             <div class="box ">
                                 <div class="circular-progress">
-                                  <div class="value-container">95%</div>
+                                  <div class="value-container">32%</div>
                                 </div>
                               </div>
                         </div>
@@ -337,19 +337,23 @@
                     <div class="row justify-content-between  p-0 m-0">
                         <div class="col-6  p-0" id="weekdays">
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(0, $xValues))
                                 <div class="col-3">
                                     <div style="width: 13px; height: 8px; background-color: #184D47; margin-top: 40%;">
 
                                     </div>
                                 </div>
+
                                 <div class="col-5">
                                     {{ $xValues[0] }}
                                 </div>
                                 <div class="col-2">
                                     {{ $yValues[0] }}%
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(1, $xValues))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #6c9255;">
 
@@ -361,21 +365,26 @@
                                 <div class="col-2">
                                     {{ $yValues[1] }}%
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(2, $xValues))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #96bb78;">
 
                                     </div>
                                 </div>
+
                                 <div class="col-5">
                                     {{ $xValues[2] }}
                                 </div>
                                 <div class="col-2">
                                     {{ $yValues[2] }}%
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(3, $xValues))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #b3d893;">
 
@@ -387,8 +396,10 @@
                                 <div class="col-2">
                                     {{ $yValues[3] }}%
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(4, $xValues))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #c6debc;">
 
@@ -400,8 +411,10 @@
                                 <div class="col-2">
                                     {{ $yValues[4] }}%
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(5, $xValues))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #d6efc7;">
 
@@ -413,8 +426,10 @@
                                 <div class="col-2">
                                     {{ $yValues[5] }}%
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(6, $xValues))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #f9d684;">
 
@@ -426,6 +441,7 @@
                                 <div class="col-2">
                                     {{ $yValues[6] }}%
                                 </div>
+                                @endif
                             </div>
 
 

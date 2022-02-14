@@ -117,19 +117,19 @@ class DashboardController extends Controller
        $day3Disc = 'Failed To Get Description';
        if($response->successful())
        {
-        $currentTemp = round($response->json('current.temp')-273.15) ;
+        $currentTemp = intval($response->json('current.temp')-273.15) ;
         $icon = $response->json('current.weather.0.icon');
         $img = 'http://openweathermap.org/img/wn/'.$icon.'@2x.png';
         $weatherDisc = $response->json('current.weather.0.description');
-        $day1Temp =round($response->json('daily.0.temp.day')-273.15);
+        $day1Temp = intval($response->json('daily.0.temp.day')-273.15);
         $day1Icon = $response->json('daily.0.weather.0.icon');
         $day1Img = 'http://openweathermap.org/img/wn/'.$day1Icon.'@2x.png';
         $day1Disc = $response->json('daily.0.weather.0.description');
-        $day2Temp =round($response->json('daily.1.temp.day')-273.15);
+        $day2Temp = intval($response->json('daily.1.temp.day')-273.15);
         $day2Icon = $response->json('daily.1.weather.0.icon');
         $day2Img = 'http://openweathermap.org/img/wn/'.$day2Icon.'@2x.png';
         $day2Disc = $response->json('daily.1.weather.0.description');
-        $day3Temp =round($response->json('daily.2.temp.day')-273.15);
+        $day3Temp = intval($response->json('daily.2.temp.day')-273.15);
         $day3Icon = $response->json('daily.2.weather.0.icon');
         $day3Img = 'http://openweathermap.org/img/wn/'.$day3Icon.'@2x.png';
         $day3Disc = $response->json('daily.2.weather.0.description');
