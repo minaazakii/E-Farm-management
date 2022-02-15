@@ -112,108 +112,121 @@
             <div class="row justify-content-around p-0 m-0">
                 <div class="col-xl-6 col-lg-6 col-md-12  col-sm-12 p-0" id="sensor">
                     <h4>
-                        Air Humidity
+                        Soil Moisture
                     </h4>
                     <div class="row justify-content-between  p-0 m-0">
                         <div class="col-6  p-0" id="weekdays">
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(0,$weekSoilDate))
                                 <div class="col-3">
                                     <div style="width: 13px; height: 8px; background-color: #184D47; margin-top: 40%;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Saturday
+                                    {{ $weekSoilDate[0] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekSoilTemp[0] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(1,$weekSoilDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #6c9255;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Sunday
+                                    {{ $weekSoilDate[1] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekSoilTemp[1] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(2,$weekSoilDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #96bb78;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Monday
+                                    {{ $weekSoilDate[2] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekSoilTemp[2] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(3,$weekSoilDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #b3d893;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Tuesday
+                                    {{ $weekSoilDate[3] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekSoilTemp[3] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(4,$weekSoilDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #c6debc;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Wednesday
+                                    {{ $weekSoilDate[4] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekSoilTemp[4] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(5,$weekSoilDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #d6efc7;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Thursday
+                                    {{ $weekSoilDate[5] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekSoilTemp[5] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(6,$weekSoilDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #f9d684;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Friday
+                                    {{ $weekSoilDate[6] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekSoilTemp[6] }}
                                 </div>
+                                @endif
                             </div>
-
 
                         </div>
                         <div class="col-6 " id="value">
                             <div class="box ">
                                 <div class="circular-progress">
-                                  <div class="value-container">32%</div>
+                                  <div class="value-container">{{ end($weekSoilTemp) }}</div>
                                 </div>
                               </div>
                         </div>
@@ -226,103 +239,116 @@
                     <div class="row justify-content-between  p-0 m-0">
                         <div class="col-6  p-0" id="weekdays">
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(0,$weekHumidityDate))
                                 <div class="col-3">
                                     <div style="width: 13px; height: 8px; background-color: #184D47; margin-top: 40%;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Saturday
+                                    {{ $weekHumidityDate[0] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekHumidityTemp[0] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(1,$weekHumidityDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #6c9255;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Sunday
+                                    {{ $weekHumidityDate[1] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekHumidityTemp[1] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(2,$weekHumidityDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #96bb78;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Monday
+                                    {{ $weekHumidityDate[2] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekHumidityTemp[2] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(3,$weekHumidityDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #b3d893;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Tuesday
+                                    {{ $weekHumidityDate[3] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekHumidityTemp[3] }}
                                 </div>
+                                @endif
+
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(4,$weekHumidityDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #c6debc;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Wednesday
+                                    {{ $weekHumidityDate[4] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekHumidityTemp[4] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(5,$weekHumidityDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #d6efc7;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Thursday
+                                    {{ $weekHumidityDate[5] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekHumidityTemp[5] }}
                                 </div>
+                                @endif
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
+                                @if(array_key_exists(6,$weekHumidityDate))
                                 <div class="col-3 pt-2">
                                     <div style="width: 13px; height: 8px; background-color: #f9d684;">
 
                                     </div>
                                 </div>
                                 <div class="col-5">
-                                    Friday
+                                    {{ $weekHumidityDate[6] }}
                                 </div>
                                 <div class="col-2">
-                                    15%
+                                    {{ $weekHumidityTemp[6] }}
                                 </div>
+                                @endif
                             </div>
-
-
                         </div>
                         <div class="col-6 " id="value">
                             <div class="box ">
                                 <div class="circular-progress">
-                                  <div class="value-container">50 %</div>
+                                  <div class="value-container">{{ end($weekHumidityTemp) }}</div>
                                 </div>
                               </div>
                         </div>
