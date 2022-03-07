@@ -5,7 +5,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SensorController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\SatelliteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +18,9 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
+Route::view('/test','lands')->name('index');
 Route::view('/','loginReg')->name('index');
-Route::get('/test',[UserController::class,'test'])->name('test');
+
 
 //User Routes
 Route::POST('/user/store',[UserController::class,'store'])->name('user.store');
@@ -39,6 +40,14 @@ Route::GET('/tasks',[TaskController::class,'index'])->name('task.index');
 Route::GET('/tasksDetails/{id}',[TaskController::class,'taskDetailsIndex'])->name('taskDetails.index');
 Route::POST('/store/tasksDetails/{id}',[TaskController::class,'storeTaskDetail'])->name('taskDetails.store');
 Route::POST('/tasks/store',[TaskController::class,'store'])->name('task.store');
+
+
+//Satellite Routes
+Route::GET('/satellite',[SatelliteController::class,'index'])->name('satellite.index');
+Route::GET('/satellite/map',[SatelliteController::class,'map'])->name('satellite.map');
+Route::POST('/satellite/map',[SatelliteController::class,'saveCoordinate'])->name('satellite.saveCoordinate');
+Route::GET('/satellite/lands',[SatelliteController::class,'landShow'])->name('satellite.landShow');
+Route::GET('/satellite/lands/{id}',[SatelliteController::class,'landDetail'])->name('satellite.landDetail');
 
 
 

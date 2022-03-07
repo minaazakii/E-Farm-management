@@ -33,6 +33,7 @@ class UserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' =>Hash::make($request->password),
+
         ];
 
         $userRef = $this->database->getReference($this->tablename)->push($userData);
@@ -74,6 +75,17 @@ class UserController extends Controller
        //throw  ValidationException::withMessages(['error'=>'Wrong E-mail or Password'] );
     }
 
+    public function showMap(Request $request)
+    {
+        $maps=$this->database->getReference($this->tablename)->getSnapShot()->getvalue();
+        $points = $maps['-Mw_wIaobPkeyb-RsFg2']['points'];
+
+        return view('mapShow',
+        [
+            'points' => json_encode($points,JSON_NUMERIC_CHECK),
+            'firstPoint' => json_encode($points[0],JSON_NUMERIC_CHECK)
+        ]);
+    }
 
 
 }

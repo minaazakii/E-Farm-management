@@ -4,33 +4,123 @@
   }
   #toggleside{
     display: none;
-    position: absolute;
+    position: relative;
   }
-  #closemenu{
-    display: none;
-    position: absolute;
+
+  
+  #sidenav {
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    background-color: #184D47;
+    overflow-x: hidden;
+    padding-top: 20px;
+    overflow-x: hidden;
+    
+  
   }
   
-  .sidenav {
-    height: 100vh;
-      z-index: 1;
-      top: 0;
-      margin-left: -12px;
-      background-color: #184D47;
-      overflow-x: hidden;
-      padding-top: 20px;
-    }
+  
+  #sidenav a :visited {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    text-align: left;
+    font: normal normal normal 22px/40px Sakkal Majalla;
+    letter-spacing: 0px;
+    background-color: #9ea19c;
+    opacity: 1;
+    display: block;
+  }
+  #sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    text-align: left;
+    font: normal normal normal 22px/40px Sakkal Majalla;
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+    display: block;
+  }
+
+ .thebody #stickyheader{
+    border-bottom: 0px solid #184D47;
+    position: sticky;
+    height: 65px;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    background-color: #fff;
+  }
+  .thebody #stickyheader input{
+    border: 1px solid #999;
+    display: block;
+    margin-top: 5px;
+    width: 100%;
+    height: 40px;
+    line-height: 2.5;
+    padding-top: 5px;
+    padding-left: 8px;
+    font: normal  22px/40px Sakkal Majalla;
+
+    font-size: 22px;
+  
+  
+  
+  }
+  .thebody #stickyheader .input-group-text{
+    position: absolute;
+    border: 0px solid #184D47;
+    background-color: transparent;
+    right: 10px;
+    margin-top: 5px;
+
     
-    .sidenav a {
-      padding: 6px 8px 6px 16px;
-      text-decoration: none;
-      text-align: left;
-      font: normal normal normal 22px/40px Sakkal Majalla;
-      letter-spacing: 0px;
-      color: #D6EFC7;
-      opacity: 1;
-      display: block;
-    }
+    top: 6px;
+  }
+  .thebody #stickyheader input:focus{
+    z-index: 0;
+    background-color: #fff;
+    outline: 1px solid #184D47;
+  }
+  .thebody #stickyheader input:focus .input-group-text {
+    z-index: 99;
+  }
+  .thebody #stickyheader button{
+    width: 50px;
+    height: 33px;
+    text-align: center;
+    background-color: #fff;
+    border: 2px solid #184D47;
+    border-radius: 5px;
+    padding-top: 4px;
+    transition: 0.2s;
+    margin-top: 12px;
+  
+  }
+  .thebody #stickyheader button svg{
+    display: block;
+    margin: 0 auto;
+    fill: #184D47;
+    transition: 0.2s;
+  
+    
+  }
+  .thebody #stickyheader button:hover {
+    background-color: #184D47;
+    transition: 0.2s;
+  
+  }
+  .thebody #stickyheader button:hover svg{
+    fill :#fff;
+    transition: 0.2s;
+  }
+
+
+
+
+
+
   
     .mypic{
     border-radius: 100%;
@@ -266,6 +356,7 @@
         @media screen and (max-width: 991.2px) {
           #toggleside{
             display: block;
+
           }
           #sidemenu {
             position: absolute;
@@ -303,96 +394,21 @@
             left: -800px;
             transition: 1s;
           }
-          .thebody #stickyheader .col-9{
-            position: relative;
-            width: 40%;
-          }
+          
           .aroundmg{
             margin: 0;
             display: inline;
         
           }
         
-          #weather{
-            width: 90%;
-            margin: 10px auto;
-            text-align: center;
-            height: 110px;
-            padding: 0;
-            box-shadow: 4px 4px 4px #00000029;}
-          
-          #weather p{
-            
-            font-size: 22PX ;
-            font-weight: 400;
-            line-height: 70%;
-            padding-top: 40px;
-            
-          
-          
-          }
-          #weatherimg{
-            padding-top: 10px;
-            width: 80%;
-          }
-        
-          #weather p span{
-            padding-top: 5px;
-            font-size: 12px;
-          }
-          
-          #miniweather{
-            
-            width: 100px;
-            margin-left: 0;
-            font-size: 9px;    
-            padding-top: 8px;
-            margin-bottom: 2px;
-            text-align: left;
-            padding-left: 2px;
-          
-            
-          }
-          #miniweather div{
-            display: inline;
-            width: 30px;
-            height: 35px;
-          }
-          #miniweather div:nth-child(1){
-            float: left;
-            margin-right: 5px;
-          }
-          #miniweather div:nth-child(2){
-            margin-left:0;
-          }
-          
-          #miniweather p{
-            color: #96bb7c;
-            text-align: left;
-            height: 35px;
-            width: 30px;
-            font-size: 12px ;
-            font-weight: 400;
-            margin: 0;
-            display: inline;
-          
-          }
-          #miniweather p sup{
-            font-size: 8px ;
-          
-            
-          }
+
         
           #toggleside{
-            display: inline;
-            left: 85%;
-            top: 15px;
+            display: block;
+            top: 0;
+            left: 0;
           }
-          #closemenu{
-            display: inline;
-            z-index: 99;
-            left: 90%;    
-          }
+          
           
         
         }

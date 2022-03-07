@@ -1,0 +1,38 @@
+#sateLands{
+}
+
+#sateLands .card{
+    position: relative;
+    width: 75%;
+    margin: 0 auto;
+    border: 1px solid #8d8d8d;
+    box-shadow: 0 0 0;
+    border-radius: 0;
+}
+
+#sateLands .card-header{
+    background-color: transparent;
+    border: 0px solid transparent;
+    border-bottom: 1px solid #707070;
+    height: 180px;
+}
+#sateLands .card-body p{
+    padding-left: 8px;
+    color: #184D47;
+    font-size: 18px;
+    font-weight: 600;
+}
+#sateLands .card-body p span {
+    color: #96bb7c;
+}
+#sateLands .card-body button{
+    background-color: transparent;
+    border: 1px solid transparent;
+    position: absolute;
+    bottom: 10px;
+    right: 5px;
+    width: 30px;
+}
+#sateLands .card-body button img{
+    width: 100%;
+}

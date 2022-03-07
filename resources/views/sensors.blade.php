@@ -7,6 +7,7 @@
     <title>Sensors</title>
     <link rel="stylesheet" href="{{ asset('./assets/css/bootstrap.css') }}">
     <link  rel="stylesheet" href="{{ asset('./assets/css/sensors.css') }}">
+    <link  rel="stylesheet" href="{{ asset('./assets/css/menu.css') }}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sakkal Majalla">
@@ -18,7 +19,7 @@
   <div class="container-fluid p-0 m-0 ">
 
     <div class="row p-0 m-0">
-      <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12   p-0" id="sidemenu">
+      <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12  p-0" id="sidemenu">
 
         <div id="sidenav">
 
@@ -602,6 +603,8 @@
     <script>
         var xValues = {!! json_encode($xValues) !!}
         var yValues = {!! json_encode($yValues)  !!}
+
+
     </script>
     <script src="{{ asset('./assets/js/sensors.js') }}"></script>
 

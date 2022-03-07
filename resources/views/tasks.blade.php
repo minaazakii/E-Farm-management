@@ -21,9 +21,9 @@
     <div class="container-fluid " >
 
       <div class="row">
-        <div class="col-2 ">
+        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12  p-0 ">
 
-          <div class="sidenav">
+          <div id="sidenav">
 
               <div class="card  " style="background-color: #184D47; border-color:#184D47;  " >
                 <div class="row g-0">

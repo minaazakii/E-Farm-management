@@ -1,0 +1,13 @@
+.position-absolute .btn-warning{
+    background-color: #f1d493;
+    color: #184D47;
+    width: 150px;
+    font: normal normal bold 18px/28px Segoe UI;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+}
+.text h5{
+    font: normal normal bold 22px/17px Segoe UI;
+    color: #184D47;
+}

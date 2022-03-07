@@ -1,0 +1,177 @@
+#analyze{
+    height: 91vh;
+    overflow-y: hidden;
+}
+
+#analyze #links {
+    text-align: center;
+}
+#analyze #links .col-2{
+    margin-right: 50px;
+}
+#analyze #links a{
+    border: 1px solid #184D47;
+    text-decoration: none;
+    color: #184D47;
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin: 5px auto;
+    font-size: 24px;
+    border-radius: 10px;
+    font-weight: 400;
+    transition: 0.2s;
+
+    
+}
+#analyze #links .active a{
+   color: #fff;
+   background-color: #184D47;
+
+}
+#analyze #links:not(.active) a:hover{
+    background-color: #184D47;
+    color: #fff;
+    box-shadow: 2px 2px 5px #184d4741;
+    transition: 0.2s;
+}
+
+#analyze #soildata {
+    width: 100%;
+    margin-top: 30px;
+
+}
+#analyze #soildata td:nth-child(1){
+    border-right:1px solid #cdcecc;
+    border-bottom:1px solid #cdcecc;
+    width: 80%;
+    color: #184D47;
+    font-size: 22px;
+    font-weight: 500;
+    padding: 5px 0 10px 20px;
+}
+#analyze #soildata td:nth-child(2){
+    border-bottom:1px solid #cdcecc;
+    color: #184D47;
+    font-size: 22px;
+    text-align: center;
+}
+#analyze #soildata td:nth-child(2) #value{
+    color: #96bb7c;
+}
+#analyze #soildata td:nth-child(2) #unit sup{
+    color: #707070;     
+    position: relative;
+    left: -5px;
+    top: -15px;
+    font-size: 16px;
+
+}
+#analyze #soildata tr:nth-child(3) td:nth-child(2) #value{
+    color: #5c817d;
+    font-weight: 400;
+}
+
+#analyze #soildata tr:nth-child(4) td:nth-child(1){
+    border-bottom:0px solid #cdcecc;
+
+}
+#analyze #soildata tr:nth-child(4) td:nth-child(2){
+    border-bottom:0px solid #cdcecc;
+
+}
+#analyze #img{
+    width: 100%;
+    margin-top: 10px;
+}
+#analyze #img img{
+    width: 100%;
+    
+}
+
+#analyze #BestCrop{
+    border-radius: 10px;
+    width: 99%;
+    margin: 0 auto;
+    padding: 2px;
+    background-color: #f2f3f0;
+    
+    
+
+}
+#analyze #BestCrop table{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    position: relative;
+    margin: 0px auto;
+    padding: 20px;
+    overflow: hidden;
+    background-color: #fff;
+
+}
+
+#analyze #BestCrop table th{
+    text-align: center;
+    color: #184D47;
+    font-weight: 400;
+    font-size: 1.1em;
+
+
+}
+
+#analyze #BestCrop table tr{
+    position: relative;
+
+}
+
+
+#analyze #BestCrop table tr td{
+    padding: 10px;
+    width: 7%;
+    border-right: 1px solid #cdcecc;
+    border-bottom: 1px solid #cdcecc;
+
+
+}
+#analyze #BestCrop table tr:nth-last-child(1) td{
+    border-bottom: 0px ;
+
+
+}
+
+#analyze #BestCrop table tr td:nth-child(1) img{
+    width: 80px;
+    height: 80px;
+    padding: 5px 0;
+    
+}
+#analyze #BestCrop table tr .progress{
+    position: absolute;
+    background-color: #96bb7c65;
+    color: #184D47;
+    border-top: 3px solid #5c817d;
+    text-align: center;
+    top: 25%;
+    height: 40%;
+    width: 7.6%;
+    left: 8.8%;
+    font-weight: 400;
+    padding-top: 8px;
+    font-size: 1.05em;
+    border-radius: 0;
+    display: inline;
+    visibility:hidden;
+    
+
+}
+#analyze #BestCrop table tr .progress span{
+    display: none;
+}
+
+
+
+
+
+
+
