@@ -17,7 +17,6 @@ let poly;
 
         });
         poly.setMap(map);
-
         map.addListener("click", addLatLng);
         }
 

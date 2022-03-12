@@ -122,7 +122,8 @@
                 <div class="col p-0 ">
                     <div class="card p-0 ">
                         <div class="card-header p-0">
-                            <img src="" alt="">
+                            <img id="mapImg"  src="" alt="">
+                            <input id="coordinations" type="hidden"  value="{{ json_encode($land['coordinations'],JSON_NUMERIC_CHECK)  }}">
                         </div>
                         <div class="card-body p-0">
                             <p>
@@ -166,7 +167,31 @@
 
 
 
+    <script>
 
+        let finalLink = "https://maps.googleapis.com/maps/api/staticmap?&maptype=satellite&key=AIzaSyB-Rqqqr-axeKVhPSfnvBKZZd2gwk4BeBY&size=400x400&path=color:red" ;
+        let coordinates = document.querySelectorAll("#coordinations")
+        var mapImgs = document.querySelectorAll("#mapImg");
+        let JsonCords  = [];
+        let center = "" ;
+        for(let i = 0 ; i<coordinates.length;i++)
+        {
+            JsonCords[i] = JSON.parse(coordinates[i].value)
+        }
+        // console.log(coordinates,JsonCords);
+        for(let i = 0 ; i<mapImgs.length ; i++)
+        {
+            for(let j = 0 ; j<JsonCords[i].length; j++)
+            {
+                finalLink += "|"+JsonCords[i][j]['lat']+","+JsonCords[i][j]['lng']
+
+            }
+            mapImgs[i].setAttribute("src",finalLink)  ;
+            finalLink = "https://maps.googleapis.com/maps/api/staticmap?&maptype=satellite&key=AIzaSyB-Rqqqr-axeKVhPSfnvBKZZd2gwk4BeBY&size=400x400&path=color:red" ;
+        }
+
+
+    </script>
 
 
 

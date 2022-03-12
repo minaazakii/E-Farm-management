@@ -36,3 +36,7 @@
 #sateLands .card-body button img{
     width: 100%;
 }
+#sateLands .card-header img{
+    width: 100%;
+    height: 100%;
+}
