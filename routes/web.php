@@ -18,7 +18,7 @@ use App\Http\Controllers\SatelliteController;
 |
 */
 
-Route::view('/test','lands')->name('index');
+Route::POST('/test',[UserController::class,'test'])->name('test');
 Route::view('/','loginReg')->name('index');
 
 

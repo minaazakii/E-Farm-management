@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Kreait\Firebase\Database;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Kreait\Laravel\Firebase\Facades\Firebase;
 use Illuminate\Validation\ValidationException;
+use App\Http\Controllers\DashboardController;
 
 class UserController extends Controller
 {
@@ -17,74 +19,88 @@ class UserController extends Controller
     {
         $this->database = $database;
         $this->tablename = 'User';
+
     }
 
     public function store(Request $request)
     {
+        $auth = app('firebase.auth');
         $this->validate($request,
         [
             'name'=>'required',
             'email'=>'required',
-            'password'=>'required|confirmed'
+            'password'=>'required|confirmed|min:6'
         ]);
 
         $userData=
         [
             'name' => $request->name,
             'email' => $request->email,
-            'password' =>Hash::make($request->password),
+            'password' =>$request->password,
 
         ];
 
-        $userRef = $this->database->getReference($this->tablename)->push($userData);
-
+        // $userRef = $this->database->getReference($this->tablename)->push($userData);
+        $createdUser = $auth->createUser($userData);
         return response()->json();
     }
 
     public function login(Request $request)
     {
-        $attributes = request()->validate([
-
+        $dashboard = new DashboardController($this->database);
+        $auth = app('firebase.auth');
+        $this->validate($request,
+        [
             'email'=>'required',
             'password'=>'required'
         ]);
 
-        $users=$this->database->getReference($this->tablename)->getSnapShot()->getvalue();
-        $loggedUser =[];
-        foreach($users as $user)
+        try
         {
-           if($user['email'] == $request->email && Hash::check($request->password , $user['password']))
-           {
-               $loggedUser['name'] = $user['name'];
-               $loggedUser['email'] = $user['email'];
-               $loggedUser['password'] = $user['password'];
-           }
-
-        }
-
-        if(!empty($loggedUser))
-        {
+            $userSigninResult = $auth->signInWithEmailAndPassword($request->email, $request->password);
+            $user = $auth->getUser($userSigninResult->data()['localId']);
             return redirect()->route('dashboard.index')
-            ->withCookie('name',$loggedUser['name'],60)
-            ->withCookie('email',$loggedUser['email'],60);
-        }
-        return redirect()->route('index')->with('error','Wrong Email or Password');
+            ->withCookie('id',$user->uid)
+            ->withCookie('email',$user->email);
 
+
+        }
+        catch(Exception $e)
+        {
+            // dd($e);
+            if($e)
+            {
+                return back()->with('error','Wrong Email or Password');
+            }
+        }
 
 
        //throw  ValidationException::withMessages(['error'=>'Wrong E-mail or Password'] );
     }
 
-    public function showMap(Request $request)
+    public function Test(Request $request)
     {
-        $maps=$this->database->getReference($this->tablename)->getSnapShot()->getvalue();
-        $points = $maps['-Mw_wIaobPkeyb-RsFg2']['points'];
+        $auth = app('firebase.auth');
 
-        return view('mapShow',
-        [
-            'points' => json_encode($points,JSON_NUMERIC_CHECK),
-            'firstPoint' => json_encode($points[0],JSON_NUMERIC_CHECK)
-        ]);
+        // $userProperties = [
+        //     'email' => $request->testemail,
+        //     'password' => $request->testpassword,
+        // ];
+        // $createdUser = $auth->createUser($userProperties);
+
+        try{
+            $signInResult = $auth->signInWithEmailAndPassword('mina@mail.com', '123456');
+        }
+        catch(Exception $e)
+        {
+            if($e)
+            {
+                dd('no no');
+            }
+        }
+
+
+
     }
 
 

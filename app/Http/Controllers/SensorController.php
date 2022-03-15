@@ -133,6 +133,7 @@ class SensorController extends Controller
             'weekSoilTemp' => array_reverse($weekSoilTemp),
             'weekHumidityDate' => array_reverse($weekHumidityDate),
             'weekHumidityTemp' => array_reverse($weekHumidityTemp),
+            'layout'=>'sensor'
         ]);
     }
 }

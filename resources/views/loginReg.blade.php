@@ -251,9 +251,12 @@
 
               </div>
 
-
-
-
+            <form action="{{ route('test')}}" method="POST">
+                @csrf
+                <input type="text" name="testemail">
+                <input type="text" name="testpassword">
+                <button type="submit">done</button>
+            </form>
 
 
               <div class="col-xl-1 col-lg-1 d-none d-sm-block">
@@ -313,8 +316,6 @@
         $("#message").fadeOut('slow').empty();
     }, 3000);
 </script>
-
-
 
 
 

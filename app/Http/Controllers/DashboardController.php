@@ -19,7 +19,7 @@ class DashboardController extends Controller
     {
         $user =
         [
-            'name'=>Cookie::get('name'),
+            'id'=>Cookie::get('id'),
             'email'=>Cookie::get('email')
         ] ;
 
@@ -156,7 +156,8 @@ class DashboardController extends Controller
             'day2Disc'=> $day2Disc,
             'day3Temp'=>$day3Temp,
             'day3Img' =>$day3Img,
-            'day3Disc'=> $day3Disc
+            'day3Disc'=> $day3Disc,
+            'layout'=>'dashboard'
 
         ]);
     }

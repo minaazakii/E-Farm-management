@@ -29,7 +29,8 @@ class TaskController extends Controller
         [
             'tasks'=>collect($tasks),
             'months'=>$months,
-            'empty' =>$empty
+            'empty' =>$empty,
+            'layout'=>'task'
         ]);
     }
 
@@ -86,7 +87,8 @@ class TaskController extends Controller
             'percentage' => round($percentage),
             'addedTasks' =>$addedTasks,
             'addedInterval' =>$addedInterval,
-            'addedPercentage' =>$addedPercentage
+            'addedPercentage' =>$addedPercentage,
+            'layout'=>'task'
         ]);
     }
 

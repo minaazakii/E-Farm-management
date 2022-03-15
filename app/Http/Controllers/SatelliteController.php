@@ -14,12 +14,18 @@ class SatelliteController extends Controller
     }
     public function index()
     {
-        return view('satelliteStart');
+        return view('satelliteStart',
+        [
+            'layout'=>'satellite'
+        ]);
     }
 
     public function map()
     {
-        return view('satelliteMap');
+        return view('satelliteMap',
+        [
+            'layout'=>'satellite'
+        ]);
     }
 
     public function saveCoordinate(Request $request)
@@ -48,7 +54,8 @@ class SatelliteController extends Controller
 
         return view('lands',
         [
-            'lands'=>$lands
+            'lands'=>$lands,
+            'layout'=>'satellite'
         ]);
     }
 
@@ -61,7 +68,8 @@ class SatelliteController extends Controller
         return view('landDetail',
         [
             'firstPoint'=> $firstPoint,
-            'coordinates'=> $coordinates
+            'coordinates'=> $coordinates,
+            'layout'=>'satellite'
         ]);
     }
 
