@@ -82,7 +82,9 @@
                                 <div class="card-body" style="margin-top: 0px;"  >
                                   <div class="row g-0">
                                     <div class="col-md-7 position-relative" >
-                                    <img src="./assets/photos/temp.jpg" class="myimg myimg position-absolute top-50 start-50 translate-middle" >
+                                        <div style="position: absolute; top: 40px; left: 82px; font-size: 0.9em; font-weight: 600; color: #184d47; ">
+                                            50%
+                                        </div>
                                       <canvas id="Chart" style="width:100%;max-width:600px"></canvas>
 
                                       </div>
@@ -107,7 +109,9 @@
                                 <div class="card-body " style="margin-top: 0px;" >
                                   <div class="row g-0">
                                     <div class="col-md-7 position-relative ">
-                                    <img src="./assets/photos/empty.jpg" class="myimg position-absolute top-50 start-50 translate-middle" >
+                                        <div style="position: absolute; top: 40px; left: 82px; font-size: 0.9em; font-weight: 600; color: #184d47; ">
+                                            50%
+                                        </div>
                                       <canvas id="secondchart" style="width:100%;max-width:600px"></canvas>
 
                                       </div>
@@ -232,10 +236,11 @@
                                     <div class="col-5 m-0">
                                         {{ $day1Disc }}
                                     </div>
-                                    <p class="col-3 m-0">
-                                       {{ $day1Temp }} <sup> &deg; &#67;</sup>
-
-                                    </p>
+                                    <div class="col-3 m-0">
+                                        <p >
+                                            {{ $day1Temp }} <sup> &deg;c</sup>
+                                         </p>
+                                    </div>
                                     <div class="col-4 m-0">
                                         <img src="{{ $day1Img }}" alt="">
                                     </div>
@@ -244,23 +249,25 @@
                                     <div class="col-5 m-0 ">
                                         {{ $day2Disc }}
                                     </div>
-                                    <p class="">
-                                        {{ $day2Temp }}<sup> &deg; &#67;</sup>
-
-                                    </p>
-                                    <div class=" ">
+                                    <div class="col-3 m-0">
+                                        <p >
+                                            {{ $day2Temp }}<sup> &deg;c</sup>
+                                        </p>
+                                    </div>
+                                    <div class="col-4 m-0 ">
                                         <img src="{{ $day2Img }}" alt="">
                                     </div>
                                 </div>
-                                <div id="miniweather">
-                                    <div class="">
+                                <div id="miniweather"  class="row p-0 m-0 justify-content-around">
+                                    <div class="col-5 m-0">
                                         {{ $day3Disc }}
                                     </div>
-                                    <p class="">
-                                        {{ $day3Temp }}<sup> &deg; &#67;</sup>
-
-                                    </p>
-                                    <div class=" ">
+                                    <div class="col-3 m-0">
+                                        <p class="">
+                                            {{ $day3Temp }}<sup> &deg;c</sup>
+                                        </p>
+                                    </div>
+                                    <div class="col-4 m-0 ">
                                         <img src="{{ $day3Img }}" alt="">
                                     </div>
                                 </div>
