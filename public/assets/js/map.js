@@ -1,6 +1,7 @@
 let poly;
         let map;
         let points = [];
+        let geoData = [];
 
         function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
@@ -8,7 +9,7 @@ let poly;
             center: { lat:30.06263, lng: 31.24967},
             mapTypeId:'satellite'
         });
-        poly = new google.maps.Polyline({
+        poly = new google.maps.Polygon({
             strokeColor: "red",
             strokeOpacity: 1.0,
             strokeWeight: 3,
@@ -26,6 +27,7 @@ let poly;
 
         path.push(event.latLng);
         points.push({lat:event.latLng.lat(),lng:event.latLng.lng()});
+        geoData.push([event.latLng.lat(),event.latLng.lng()]);
         new google.maps.Marker({
             position: event.latLng,
             title: "#" + path.getLength(),

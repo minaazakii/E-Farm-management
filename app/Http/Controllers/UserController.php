@@ -8,9 +8,11 @@ use Illuminate\Http\Request;
 use Kreait\Firebase\Database;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\DashboardController;
 use Kreait\Laravel\Firebase\Facades\Firebase;
 use Illuminate\Validation\ValidationException;
-use App\Http\Controllers\DashboardController;
+use GuzzleHttp\Client;
 
 class UserController extends Controller
 {
@@ -80,27 +82,61 @@ class UserController extends Controller
 
     public function Test(Request $request)
     {
-        $auth = app('firebase.auth');
+        $data =
+        [
+            'name' =>'hi',
+            'geo_json'=>[
+                'type'=>'Feature',
+                'properties'=>[
+                    'name'=>'hi'
 
-        // $userProperties = [
-        //     'email' => $request->testemail,
-        //     'password' => $request->testpassword,
-        // ];
-        // $createdUser = $auth->createUser($userProperties);
+                ],
+                'geometry'=>[
+                    'type'=>'Polygon',
+                    'coordinates'=>
+                    [
+                        [
+                            [-121.1958,37.6683],
+                            [-121.1779,37.6687],
+                            [-121.1773,37.6792],
+                            [-121.1958,37.6792],
+                            [-121.1958,37.6683]
+                        ]
+                    ]
+                ]
+            ]
+        ];
+        // return json_encode($data);
+        $client = new Client(['base_uri' => 'http://api.agromonitoring.com/agro/1.0/polygons?appid=4ff9914288c431e66d4954be31a9c21d']);
+        $response = $client->request('POST','',
+        [
+            'json'=>
+            [
+                'name' =>'hi2',
+                'geo_json'=>[
+                    'type'=>'Feature',
+                    'properties'=>[
+                        'name'=>'hi'
+                    ],
+                    'geometry'=>[
+                        'type'=>'Polygon',
+                        'coordinates'=>
+                        [
+                            [
+                                [-121.1958,37.6681],
+                                [-121.1779,37.6687],
+                                [-121.1773,37.6792],
+                                [-121.1958,37.6792],
+                                [-121.1958,37.6681]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
 
-        try{
-            $signInResult = $auth->signInWithEmailAndPassword('mina@mail.com', '123456');
-        }
-        catch(Exception $e)
-        {
-            if($e)
-            {
-                dd('no no');
-            }
-        }
-
-
-
+        ]);
+        $test = json_decode($response->getBody());
+       return $test->id;
     }
 
 

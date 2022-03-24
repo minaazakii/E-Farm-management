@@ -253,8 +253,6 @@
 
             <form action="{{ route('test')}}" method="POST">
                 @csrf
-                <input type="text" name="testemail">
-                <input type="text" name="testpassword">
                 <button type="submit">done</button>
             </form>
 

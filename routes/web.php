@@ -48,7 +48,7 @@ Route::GET('/satellite/map',[SatelliteController::class,'map'])->name('satellite
 Route::POST('/satellite/map',[SatelliteController::class,'saveCoordinate'])->name('satellite.saveCoordinate');
 Route::GET('/satellite/lands',[SatelliteController::class,'landShow'])->name('satellite.landShow');
 Route::GET('/satellite/lands/{id}',[SatelliteController::class,'landDetail'])->name('satellite.landDetail');
-
+Route::GET('sat/test',[SatelliteController::class,'test']);
 
 
 

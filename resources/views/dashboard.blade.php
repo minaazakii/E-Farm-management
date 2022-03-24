@@ -21,7 +21,7 @@
 
     <div class="row">
         @include('layouts.sideMenu')
-        
+
               <div id="toggleside" onclick="showmenu();">
                 <img src="./assets/photos/menu.png" alt="">
               </div>
@@ -101,7 +101,7 @@
                             <div class="row">
 
                               <div class="col-12" style="width: 100%;"><div class="card text-dark mb-3 photocard " style="width: 100%; ">
-                                <div class="card-header bg-transparent">PH <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eyedropper" viewBox="0 0 16 16">
+                                <div class="card-header bg-transparent">Soil Moisture <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eyedropper" viewBox="0 0 16 16">
                                   <path d="M13.354.646a1.207 1.207 0 0 0-1.708 0L8.5 3.793l-.646-.647a.5.5 0 1 0-.708.708L8.293 5l-7.147 7.146A.5.5 0 0 0 1 12.5v1.793l-.854.853a.5.5 0 1 0 .708.707L1.707 15H3.5a.5.5 0 0 0 .354-.146L11 7.707l1.146 1.147a.5.5 0 0 0 .708-.708l-.647-.646 3.147-3.146a1.207 1.207 0 0 0 0-1.708l-2-2zM2 12.707l7-7L10.293 7l-7 7H2v-1.293z"/>
                                 </svg></div>
                                 <div class="card-body " style="margin-top: 0px;" >
@@ -114,7 +114,7 @@
                                     <div class="col-md-5">
 
 
-                                        <p class="card-text"><br>PH is a measure of how acidic/basic water is</p>
+                                        <p class="card-text"><br>Soil Moisture is a measure of how acidic/basic water is</p>
 
                                     </div>
                                   </div>
@@ -213,7 +213,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div class="row justify-content-start  p-0 mt-4" id="weather">
+                        <div class="row justify-content-start  p-0 mt-2" id="weather">
                             <div class="col-3  p-0 ">
                                 <p class=" ">
                                     {{ $currentTemp }}<sup> &deg; <sup>c</sup> </sup>
@@ -224,24 +224,24 @@
                                 </p>
                             </div>
 
-                            <div class="col-4 p-0 pt-2  ">
+                            <div class="col-4 p-0 pt-4   ">
                                 <img src="{{ $img }}"  alt="" id="weatherimg">
                             </div>
                             <div class="col-5  p-0">
-                                <div id="miniweather">
-                                    <div class="">
+                                <div id="miniweather" class="row p-0 m-0 justify-content-around">
+                                    <div class="col-5 m-0">
                                         {{ $day1Disc }}
                                     </div>
-                                    <p class="">
+                                    <p class="col-3 m-0">
                                        {{ $day1Temp }} <sup> &deg; &#67;</sup>
 
                                     </p>
-                                    <div class=" ">
+                                    <div class="col-4 m-0">
                                         <img src="{{ $day1Img }}" alt="">
                                     </div>
                                 </div>
-                                <div id="miniweather">
-                                    <div class="">
+                                <div id="miniweather" class="row p-0 m-0 justify-content-around">
+                                    <div class="col-5 m-0 ">
                                         {{ $day2Disc }}
                                     </div>
                                     <p class="">

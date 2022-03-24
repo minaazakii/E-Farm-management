@@ -5,7 +5,7 @@
         <div class="card  " style="background-color: #184D47; border-color:#184D47;  " >
           <div class="row g-0">
             <div class="col-4">
-              <img src="./assets/photos/amira.jpg" class="img-fluid  mypic" >
+              <img src="{{ asset('./assets/photos/amira.jpg') }}" class="img-fluid  mypic" >
 
 
             </div>
@@ -13,7 +13,7 @@
             <div class="col-8 ">
               <div class="card-body ">
                 <h6 class="card-title">Amira Zakaria</h6>
-                <h6 class="card-title">Alexanderia,Egypt</h6>
+                <h6 class="card-title">{{ Cookie::get('email') }}</h6>
               </div>
 
             </div>

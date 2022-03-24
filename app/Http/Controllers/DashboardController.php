@@ -17,11 +17,7 @@ class DashboardController extends Controller
     }
     public function index()
     {
-        $user =
-        [
-            'id'=>Cookie::get('id'),
-            'email'=>Cookie::get('email')
-        ] ;
+
 
         //********************************Temperature Chart Data **********************************//
 
@@ -138,7 +134,6 @@ class DashboardController extends Controller
        //****************************************************** End API Weather Data **********************************************************//
         return view('dashboard',
         [
-            'user'=>$user,
             'xValues'=>json_encode($xValues),
             'yValues'=>json_encode($yValues),
             'humidity'=> json_encode($humidity),

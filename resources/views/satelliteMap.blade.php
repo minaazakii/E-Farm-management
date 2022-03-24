@@ -91,10 +91,11 @@
                  </div></div></div>
                  <div class="row p-1 m-0 justify-content-around">
                  <div class="position-relative mt-5">
-
+                    <input type="hidden" id="landId">
                   <div class="position-absolute bottom-0 end-0">
-                  <button type="submit" class="me-3 btn btn-warning">Save</button>
+                  <button type="button" id="saveBtn" class="me-3 btn btn-warning">Save</button>
                 </form>
+
                   </div>
 
                  </div></div>
@@ -118,13 +119,100 @@
                 ></script>
 
                 <script>
-                    $('#mapForm').submit(function(e){
-                        e.preventDefault();
+                    let landId;
 
+                    // function getApi()
+                    // {
+                    //     console.log('api')
+                    //             geoData.push(geoData[0]);
+                    //             let data = {
+                    //                 "name":$('#land').val(),
+                    //                 "geo_json":{
+                    //                     "type":"Feature",
+                    //                     "properties":{
+
+                    //                     },
+                    //                     "geometry":{
+                    //                         "type":"Polygon",
+                    //                         "coordinates": [geoData]
+                    //                     }
+                    //                 }
+                    //                 }
+                    //         fetch('http://api.agromonitoring.com/agro/1.0/polygons?appid=4ff9914288c431e66d4954be31a9c21d',{
+
+                    //             method:'POST',
+                    //             headers:{
+                    //                 'Content-Type': 'application/json',
+                    //             },
+                    //             body:JSON.stringify(data)
+                    //         })
+                    //         .then((response)=>response.json())
+                    //         .then((data)=>{
+                    //             console.log(data);
+                    //             landId = data.id;
+                    //             return data;
+
+                    //         })
+                    //         .catch((error)=>{
+                    //             console.log(error);
+
+                    //         })
+                    // }
+                    // function getData()
+                    // {
+                    //     console.log('api')
+                    //             geoData.push(geoData[0]);
+                    //             let data = {
+                    //                 "name":$('#land').val(),
+                    //                 "geo_json":{
+                    //                     "type":"Feature",
+                    //                     "properties":{
+
+                    //                     },
+                    //                     "geometry":{
+                    //                         "type":"Polygon",
+                    //                         "coordinates": [geoData]
+                    //                     }
+                    //                 }
+                    //                 }
+                    //     return new Promise(function(resolve, reject) {
+                    //         fetch('http://api.agromonitoring.com/agro/1.0/polygons?appid=4ff9914288c431e66d4954be31a9c21d',{
+
+                    //             method:'POST',
+                    //             headers:{
+                    //                 'Content-Type': 'application/json',
+                    //             },
+                    //             body:JSON.stringify(data)
+                    //             })
+                    //             .then((response)=>{return response.json()})
+                    //             .then((data)=>{
+                    //             console.log(data);
+                    //             landId = data;
+                    //             resolve(data) ;
+
+                    //             })
+                    //             .catch((error)=>{
+                    //             console.log(error);
+
+                    //             })
+                    //     });
+                    // }
+
+
+                    function submitRequest()
+                    {
+
+                        // let id = getData().then(data => {
+                        //     return data.id
+
+                        //     }).then();
+
+                        geoData.push(geoData[0]);
                         let land = $('#land').val();
                         let cropType = $('#cropType').val();
                         let harvestTime = $('#harvestTime').val();
                         let _token = $('input[name=_token]').val();
+                        points.push(points[0]);
                         $.ajax({
                             url:'{{ route('satellite.saveCoordinate') }}',
                             type:'POST',
@@ -133,20 +221,40 @@
                                 cropType:cropType,
                                 harvestTime:harvestTime,
                                 coordinations:points,
+                                geoData:geoData,
                                 _token:_token,
                             },
                             success:function(response)
                             {
                                 alert('Data Saved')
+                                window.location.replace('http://localhost:8000/satellite/lands');
                                 console.log(response);
                             },
                             error:function(error)
                             {
                                 console.log(error)
-                                alert('error while Saving Data')
+                                if(error.responseJSON.message.split('message')[1])
+                                {
+                                    alert('Area selected is Too big');
+                                }else
+                                {
+                                    alert('Error While Saving Data')
+                                }
+
+
                             }
                         })
+                    }
+                    var saveBtn = document.getElementById("saveBtn");
+                    saveBtn.addEventListener("click", submitRequest);
+                    $('#mapForm').submit(function(e){
+                        e.preventDefault();
+
                     });
+                </script>
+
+                <script>
+
                 </script>
                 </body>
 </html>

@@ -72,46 +72,39 @@
                 <script src="{{ asset('./assets/js/main.js') }}"></script>
                 <script src="{{ asset('./assets/js/bootstrap.js') }}"></script>
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-                <script
-                async
-                defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Rqqqr-axeKVhPSfnvBKZZd2gwk4BeBY&callback=initMap"
-                ></script>
-
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
                 <script>
 
-function initMap() {
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: {!! $firstPoint !!},
-    mapTypeId: "satellite",
-  });
+                    function initMap() {
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 4,
+                        center: {!! $firstPoint !!},
+                        mapTypeId: "satellite",
+                    });
 
-  console.log({!! $coordinates  !!})
-  var points = {!! $coordinates !!}
+                    console.log({!! $coordinates  !!})
+                    var points = {!! $coordinates !!}
 
-  const flightPath = new google.maps.Polyline({
-    path: points,
-    geodesic: true,
-    strokeColor: "#FF0000",
-    strokeOpacity: 1.0,
-    strokeWeight: 2,
-  });
+                    const flightPath = new google.maps.Polyline({
+                        path: points,
+                        geodesic: true,
+                        strokeColor: "#FF0000",
+                        strokeOpacity: 1.0,
+                        strokeWeight: 2,
+                    });
 
-  var fitToMarkers = function(markers) {
-    var bounds = new google.maps.LatLngBounds();
-    var length = markers.length;
-    for (var i = 0; i < length; i++) {
-        bounds.extend(new google.maps.LatLng(markers[i].lat, markers[i].lng));
-        map.fitBounds(bounds);
-    }
-};
+                    var fitToMarkers = function(markers) {
+                        var bounds = new google.maps.LatLngBounds();
+                        var length = markers.length;
+                        for (var i = 0; i < length; i++) {
+                            bounds.extend(new google.maps.LatLng(markers[i].lat, markers[i].lng));
+                            map.fitBounds(bounds);
+                        }
+                    };
 
-    fitToMarkers(points);
-    flightPath.setMap(map);
+                        fitToMarkers(points);
+                        flightPath.setMap(map);
 
-}
+                    }
 
       </script>
 
