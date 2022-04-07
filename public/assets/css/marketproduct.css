@@ -1,0 +1,113 @@
+#marketproduct{
+    background-color: #f2f4f1;
+    width: 70%;
+    margin: 8% auto;
+    border-radius: 15px;
+}
+
+#favicon{
+    float: right;
+    border: 0px solid transparent;
+    margin: 15px ;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 30px;
+
+}
+#favicon img{
+    width: 100%;
+}
+#productimg{
+    padding: 5px;
+}
+#productimg img{
+    display: block;
+    margin: 0 auto;
+}
+#productinfo {
+    padding: 5px;
+}
+#productinfo h1{
+    color: #184D47;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+#productinfo p{
+    color: #7c7e7d;
+    padding-left: 8px;
+    font-weight: 400;
+}
+#quantity{
+    margin: 50px 0 30px 0;
+}
+#quantity button{
+    border: 2px solid #184D47;
+    width: 50px;
+    display: block;
+    background-color: transparent;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 70px;
+    color: #184D47;
+    font-weight: 400;
+    height: 50px;
+    line-height: 0;
+    padding-bottom: 15px;
+    
+}
+/* #quantity button img{
+    width: 100%;
+} */
+#quantity span{
+    font-size: 45px;
+
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #787c7d;
+    line-height: 40px;
+    font-weight: 600;
+}
+#price h3{
+    color: #184D47;
+
+}
+#price{
+    margin-bottom: 20px;
+}
+#price button{
+    display: block;
+    margin: 5px auto;
+    text-align: center;
+    width: 100%;
+    height: 80%;
+    border: 1px solid #fbd584;
+    background-color: #fbd584;
+    border-radius: 50px;
+    color: #184D47;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+#rating{
+    position: relative;
+
+}
+#rating #rate{
+    display: none;
+    position: absolute;
+}
+#rating #stars{
+    
+    padding: 0;
+}
+#rating #stars svg{
+    background-color: transparent;
+    fill: #fbd584;
+    margin: 0 0px;
+    width: 23px;
+    height: 23px;
+
+}

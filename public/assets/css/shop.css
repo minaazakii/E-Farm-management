@@ -1,0 +1,33 @@
+.card-body{
+text-align: center;
+
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.flex .card{
+background-color: #777d7d0e;
+height: 20rem;
+border: none;
+}
+.flex .card img{
+    height: 9rem;
+    }
+.card-body svg{
+    color: rgb(219, 219, 92);
+}
+.card-body h5{
+color: #184D47;
+}
+.card-body p{
+margin-bottom: 0.5rem;    }
+.card-body .text{
+    color: #184D47;
+    }
+    @media (min-width: 800px) {
+        .flex .card {
+          flex: 100%;
+        }
+      }

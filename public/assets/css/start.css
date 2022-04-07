@@ -29,3 +29,9 @@ background-size: 100% 400px;
 
     font: normal normal bold 18px/28px Segoe UI;
 }
+.market{
+    background-image: url('../photos/machine.svg');
+    background-repeat: no-repeat;
+    background-position: left; 
+background-size: 100% 400px;
+}

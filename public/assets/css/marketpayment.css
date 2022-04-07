@@ -1,0 +1,149 @@
+
+#marketpayment h2{
+    color: #184D47;
+    padding-left: 38px;
+    padding-top: 20px;
+    font-weight: 700;
+}
+#marketpayment form{
+    padding-top: 20px;
+
+
+}
+#marketpayment form input[type=text] {
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 5px;
+    margin-bottom: 30px;
+    font-size: 22px;
+    border: 1.5px solid #7e8283;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px #7e828393;
+}
+
+#marketpayment form input[type=text]:focus{
+    outline: 1px solid #7e8283;
+}  
+#marketpayment form textarea{
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    margin-bottom: 20px;
+    font-size: 22px;
+    border: 1.5px solid #7e8283;
+    border-radius: 8px;
+    box-shadow: 0 1px 1px #7e828393;
+    min-height: 100px;
+    padding: 5px;
+
+}
+#marketpayment form textarea:focus{
+    outline: 1px solid #7e8283;
+
+}
+
+#marketpayment form label{
+    display: inline-block;
+    margin-left: 47px;
+    color: #7e8283;
+    font-size: 20px;
+    font-weight: 500;
+
+}
+#marketpayment form label:last-of-type{
+    margin-left: 20px;
+
+}
+#marketpayment form input[type=checkbox]{
+    appearance: none;
+    margin-left: 60px;
+    width: 16px;
+    cursor: pointer;
+    background-color: #fff    ;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #fad585;
+    height: 16px;
+    
+}
+#marketpayment form input[type=checkbox]::after{
+    content: "\2713";
+    font-weight: 600;
+    color: #184D47;
+    display: none;
+    font-size: 16px;  
+}
+#marketpayment form input[type=checkbox]:checked    {
+    background: #fad585;
+
+}
+#marketpayment form input[type=checkbox]:checked::after{
+    display: inline-block;
+}
+#marketpayment form input[type=submit]{
+    display: block;
+    margin: 10px auto;
+    background-color: #fad585;
+    color: #184D47;
+    min-width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid #fad585;
+
+
+}
+#marketpayment form img{
+    display: inline-block;
+    width: 100px;
+    margin-top: 5px;
+    margin-right: 30px;
+    float: right;
+}
+
+#ordersummary{
+    background-color: #f2f4f1;
+}
+#ordersummary h4{
+    color: #99b67c;
+    margin-top: 80px;
+    padding-left: 20px;
+    
+}
+#ordersummary hr{
+    margin: 30px auto;
+    width: 90%;
+    height: 1.5px;
+}
+#ordersummary #item{
+    color: #184D47;
+    font-size: 22px;
+    font-weight: 400;
+}
+#ordersummary #item .col-2{
+    color: #7e8283;
+}
+#ordersummary #item .col-12{
+    font-weight: 600;
+}
+#ordersummary #info{
+    color: #7e8283;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#ordersummary #price{
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    font-size: 22px;
+    text-align: center;
+    color: #99b67c;
+    font-weight: 600;
+
+}
+

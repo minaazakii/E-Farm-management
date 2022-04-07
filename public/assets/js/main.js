@@ -33,3 +33,37 @@ var search = document.getElementById("search");
     }
     console.log(search);
 }
+
+function togglemessage(){
+  var m = document.getElementById("messages");
+
+  console.log(m);
+  if (m.classList.contains("active")){
+    m.classList.remove("active");
+    m.style.display = "none";
+  }
+  else{
+    document.getElementById("notifcations").style.display = "none";
+    document.getElementById("notifcations").classList.remove("active");
+
+    m.classList.add("active");
+    m.style.display = "block";
+  }
+}
+
+function togglenotfs(){
+  var m = document.getElementById("notifcations");
+
+  console.log(m);
+  if (m.classList.contains("active")){
+    m.classList.remove("active");
+    m.style.display = "none";
+  }
+  else{
+    document.getElementById("messages").style.display = "none";
+    document.getElementById("messages").classList.remove("active");
+
+    m.classList.add("active");
+    m.style.display = "block";
+  }
+}
