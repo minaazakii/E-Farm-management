@@ -6,19 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>maps</title>
+    <link  rel="stylesheet" href="{{ asset('./assets/css/Analyze.css') }}">
+    <link  rel="stylesheet" href="{{ asset('./assets/css/map.css') }}">
 
-   
-    <link rel="stylesheet" href="{{ asset('./assets/css/Analyze.css') }}">
     <link rel="stylesheet" href="{{ asset('./assets/css/bootstrap.css') }}">
     <link  rel="stylesheet" href="{{ asset('./assets/css/menu.css') }}">
-    <link  rel="stylesheet" href="{{ asset('./assets/css/lands.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sakkal|Majalla">
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sakkal Majalla">
-
-    
 <style>
     #map{
         width: 100%;
@@ -32,7 +26,7 @@
 <body>
 
   <div class="container-fluid p-0 m-0 ">
- 
+
     <div class="row p-0 m-0">
       <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-12 col-sm-12  p-0" id="sidemenu">
 
@@ -42,8 +36,8 @@
               <div class="row g-0">
                 <div class="col-4">
                   <img src="./assets/photos/amira.jpg" class="img-fluid  mypic" >
-                  
-                 
+
+
                 </div>
 
                 <div class="col-8 ">
@@ -89,10 +83,10 @@
                     <a href="#services"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open-fill" viewBox="0 0 16 16">
                       <path d="M1.5 15a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1H13V2.5A1.5 1.5 0 0 0 11.5 1H11V.5a.5.5 0 0 0-.57-.495l-7 1A.5.5 0 0 0 3 1.5V15H1.5zM11 2h.5a.5.5 0 0 1 .5.5V15h-1V2zm-2.5 8c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
                     </svg>Log out</a>
-          
+
                   </div>
       </div>
-              
+
       <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-sm-12 col-xs-12 p-0 m-0  - thebody" id="content">
         <div class="row p-1 m-0 justify-content-around" id="stickyheader"  >
           <div class="col-9 " >
@@ -102,7 +96,7 @@
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
                 </span>
               </div>
-          </div>          
+          </div>
           <div class="col-1  " >
             <button  id="btn" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
               <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
@@ -124,9 +118,9 @@
             </button>
           </div>
         </div>
-       
 
-                  
+
+
                  <div class="row p-2 ms-0 justify-content-around flex ">
 
 <div  class="col-6 ">
@@ -134,15 +128,15 @@
 
   <div id="map" class="height"></div>
 </div>
-               
+
                   <div  class="col-3">
 <div class="height scroll">
 <h5>layer</h5>
 <h4>NDVI</h4>
 <div >
 
-  
-  
+
+
 <div class="row">
 
   <div class="col-3"><span>oct18,2021</span></div>
@@ -176,12 +170,12 @@
 </div>
 </div>
                  </div>
-                </div> 
+                </div>
 
                 <div  class="col-3">
                   <div class="height">
                     <div class="row g-0 color">
-                      <div class="col-4 col-md-4">      
+                      <div class="col-4 col-md-4">
                                       <h5>All</h5>
                        </div>
                       <div class="col-8 col-md-8">
@@ -200,27 +194,27 @@
 
 
 <div>
-         
+
                                         <div class="row">
-                    
+
                       <div class="col-3">asssssss</div>
                       <div class="col-6"></div>
                       <div class="col-3">0.63</div>
                     </div>
                     <div class="row">
-                    
+
                       <div class="col-3">assssss</div>
                       <div class="col-6"></div>
                       <div class="col-3">0.42</div>
                     </div>
                     <div class="row">
-                    
+
                       <div class="col-3">asssssss</div>
                       <div class="col-6"></div>
                       <div class="col-3">0.44</div>
                     </div>
                     <div class="row">
-                    
+
                       <div class="col-3"></div>
                       <div class="col-6"></div>
                       <div class="col-3"></div>
@@ -231,29 +225,64 @@
 
 
                 </div>
-                 </div> 
+                 </div>
 
 
 
 
 </div>
-                
+
                 </div>
 
     </div>
     </div></div>
 
-                  
-                
-    <script src="./assets/js/map.js"></script>
 
-                
-                  <script
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYxeHy8AOh07hIacehNp7ht58ATJSamNI&callback=initMap&libraries=&v=weekly"
-                  async>
+
+                <script src="{{ asset('./assets/js/map.js') }}"></script>
+                <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYxeHy8AOh07hIacehNp7ht58ATJSamNI&callback=initMap&libraries=&v=weekly"
+                async>
                 </script>
+                <script src="{{ asset('./assets/js/main.js') }}"></script>
+                <script src="{{ asset('./assets/js/bootstrap.js') }}"></script>
 
-                <script src="./assets/js/main.js"></script>
-                
-                      <script src="./assets/js/bootstrap.js"></script>
+                <script src="{{ asset('./assets/js/map.js') }}"></script>
+                <script src="{{ asset('./assets/js/main.js') }}"></script>
+                <script src="{{ asset('./assets/js/bootstrap.js') }}"></script>
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+                <script>
+                    function initMap() {
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 4,
+                        center: {!! $firstPoint !!},
+                        mapTypeId: "satellite",
+                    });
+                    console.log({!! $coordinates  !!})
+                    var points = {!! $coordinates !!}
+                    const path = new google.maps.Polyline({
+                        path: points,
+                        geodesic: true,
+                        strokeColor: "#FF0000",
+                        strokeOpacity: 1.0,
+                        strokeWeight: 2,
+                    });
+                    var fitToMarkers = function(markers) {
+                        var bounds = new google.maps.LatLngBounds();
+                        var length = markers.length;
+                        for (var i = 0; i < length; i++) {
+                            bounds.extend(new google.maps.LatLng(markers[i].lat, markers[i].lng));
+                            map.fitBounds(bounds);
+                        }
+                    };
+                        fitToMarkers(points);
+                        path.setMap(map);
+                    }
+            </script>
+
+            <script
+            async
+            defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Rqqqr-axeKVhPSfnvBKZZd2gwk4BeBY&callback=initMap"
+            ></script>
                 </body>
