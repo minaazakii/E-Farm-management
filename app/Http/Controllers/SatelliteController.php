@@ -104,6 +104,7 @@ class SatelliteController extends Controller
         $response = Http::get($url);
         $imgs = json_decode($imgResponse);
         $NDVI = json_decode($response);
+        $lastDay=max($NDVI);
         // foreach($NDVI as $date)
         // {
         //    echo date('Y/m/d H:i:s', $date->dt) .'</br>';
@@ -114,12 +115,16 @@ class SatelliteController extends Controller
         $coordinates = json_encode($land['coordinations'],JSON_NUMERIC_CHECK);
         $firstPoint =  json_encode($land['coordinations'][0],JSON_NUMERIC_CHECK);
 
+        
         return view('landDetail',
         [
             'firstPoint'=> $firstPoint,
             'coordinates'=> $coordinates,
-            'layout'=>'satellite'
+            'layout'=>'satellite',
+            'lastDay'=> $lastDay,
+            'soilResponse'=>$soilResponse
         ]);
+
     }
 
     public function test()
