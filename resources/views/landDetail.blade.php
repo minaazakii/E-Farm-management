@@ -23,6 +23,8 @@
 
 </head>
 
+
+
 <body>
 
   <div class="container-fluid p-0 m-0 ">
@@ -139,7 +141,7 @@
 
 <div class="row">
 
-  <div class="col-3"><span>oct18,2021</span></div>
+  <div class="col-3"><span>{{date('Y/m/d', $lastDay->dt ) }}</span></div>
   <div class="col-6"></div>
   <div class="col-3"></div>
 </div>
@@ -148,25 +150,54 @@
 
   <div class="col-3">max</div>
   <div class="col-6"></div>
-  <div class="col-3">0.63</div>
+  <div class="col-3">{{number_format($lastDay->data->max,2)}}</div>
 </div>
 <div class="row">
 
   <div class="col-3">mean</div>
   <div class="col-6"></div>
-  <div class="col-3">0.42</div>
+  <div class="col-3">{{number_format($lastDay->data->mean,2)}}</div>
 </div>
 <div class="row">
 
   <div class="col-3">median</div>
   <div class="col-6"></div>
-  <div class="col-3">0.44</div>
+  <div class="col-3">{{number_format($lastDay->data->median,2)}}</div>
 </div>
 <div class="row">
 
-  <div class="col-3"></div>
+  <div class="col-3">num</div>
   <div class="col-6"></div>
-  <div class="col-3"></div>
+  <div class="col-3">{{number_format($lastDay->data->num,2)}}</div>
+</div>
+
+<div class="row">
+
+  <div class="col-3">min</div>
+  <div class="col-6"></div>
+  <div class="col-3">{{number_format($lastDay->data->min,2)}}</div>
+</div>
+
+<div class="row">
+
+  <div class="col-3">p25</div>
+  <div class="col-6"></div>
+  <div class="col-3">{{number_format($lastDay->data->p25,2)}}</div>
+</div>
+
+
+<div class="row">
+
+  <div class="col-3">p75</div>
+  <div class="col-6"></div>
+  <div class="col-3">{{number_format($lastDay->data->p75,2)}}</div>
+</div>
+
+<div class="row">
+
+  <div class="col-3">std</div>
+  <div class="col-6"></div>
+  <div class="col-3">{{number_format($lastDay->data->std,2)}}</div>
 </div>
 </div>
                  </div>
@@ -188,7 +219,7 @@
                       </div>
                     </div>
                     <div class="row g-0">
-                      <div class="col-4 col-md-4"> <h4>NDVI</h4></div>
+                      <div class="col-4 col-md-4"> <h5>Current Soil Data</h5></div>
                       <div class="col-8 col-md-8"></div>
                     </div>
 
@@ -197,21 +228,20 @@
 
                                         <div class="row">
 
-                      <div class="col-3">asssssss</div>
-                      <div class="col-6"></div>
-                      <div class="col-3">0.63</div>
+                      <div class="col-9">Temp 10cm depth</div>
+                      <div class="col-3">{{round($soilResponse['t10'] - 273.15)}}&deg;C</div>
                     </div>
                     <div class="row">
 
-                      <div class="col-3">assssss</div>
+                      <div class="col-3">moisture</div>
                       <div class="col-6"></div>
-                      <div class="col-3">0.42</div>
+                      <div class="col-3">{{$soilResponse['moisture']}}</div>
                     </div>
                     <div class="row">
 
-                      <div class="col-3">asssssss</div>
+                      <div class="col-3">Surface temp</div>
                       <div class="col-6"></div>
-                      <div class="col-3">0.44</div>
+                      <div class="col-3">{{round($soilResponse['t0']- 273.15)}}&deg;C</div>
                     </div>
                     <div class="row">
 
