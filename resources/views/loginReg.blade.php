@@ -251,12 +251,6 @@
 
               </div>
 
-            <form action="{{ route('test')}}" method="POST">
-                @csrf
-                <button type="submit">done</button>
-            </form>
-
-
               <div class="col-xl-1 col-lg-1 d-none d-sm-block">
               </div>
             </div>

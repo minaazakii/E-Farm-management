@@ -25,6 +25,7 @@ Route::view('/','loginReg')->name('login.index');
 //User Routes
 Route::POST('/user/store',[UserController::class,'store'])->name('user.store');
 Route::POST('/home',[UserController::class,'login'])->name('login');
+Route::GET('/logout',[UserController::class,'logout'])->name('logout');
 
 
 Route::middleware('loggedin')->group(function()

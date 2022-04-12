@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use Exception;
 use App\Models\User;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Kreait\Firebase\Database;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cookie;
 use App\Http\Controllers\DashboardController;
 use Kreait\Laravel\Firebase\Facades\Firebase;
 use Illuminate\Validation\ValidationException;
-use GuzzleHttp\Client;
 
 class UserController extends Controller
 {
@@ -83,6 +84,14 @@ class UserController extends Controller
 
 
        //throw  ValidationException::withMessages(['error'=>'Wrong E-mail or Password'] );
+    }
+
+    public function logout()
+    {
+        Cookie::forget('id');
+        Cookie::forget('email');
+        return redirect()->route('login.index');
+
     }
 
     public function Test(Request $request)
