@@ -19,7 +19,7 @@ use App\Http\Controllers\SatelliteController;
 */
 
 Route::POST('/test',[UserController::class,'test'])->name('test');
-Route::view('/','loginReg')->name('index');
+Route::view('/','loginReg')->name('login.index');
 
 
 //User Routes
@@ -27,8 +27,9 @@ Route::POST('/user/store',[UserController::class,'store'])->name('user.store');
 Route::POST('/home',[UserController::class,'login'])->name('login');
 
 
-
-//dashboard Routes
+Route::middleware('loggedin')->group(function()
+{
+    //dashboard Routes
 Route::GET('/dashboard',[DashboardController::class,'index'])->name('dashboard.index');
 
 
@@ -49,6 +50,8 @@ Route::POST('/satellite/map',[SatelliteController::class,'saveCoordinate'])->nam
 Route::GET('/satellite/lands',[SatelliteController::class,'landShow'])->name('satellite.landShow');
 Route::GET('/satellite/lands/{id}',[SatelliteController::class,'landDetail'])->name('satellite.landDetail');
 Route::GET('sat/test',[SatelliteController::class,'test']);
+
+});
 
 
 
