@@ -100,13 +100,13 @@
     <div class="container-fluid" id="cont" >
       <div class="row" >
 
-                    @foreach ($tasks as $key => $task )
+                    @foreach ($tasks as $date => $task )
                     @if(date('F', strtotime($task['startDate'])) == $month)
                         <div class="row  new  " >
                           <div class="col-1 day  whitediv  " >
-                            <a class="create"  href="{{ route('taskDetails.index',$key) }}">
-                            <p>{{substr(date('l', strtotime($task['startDate'])),0,3)  }}</p>
-                            <p class="currentday"> <img src="./assets/photos/plant.svg">{{ substr($task['startDate'],-2) }}</p></a>
+                            <a class="create"  href="{{ route('taskDetails.index',$date) }}">
+                            <p>{{substr($date,0,3)  }}</p>
+                            <p class="currentday"> <img src="./assets/photos/plant.svg">{{ substr($date,5,3) }}</p></a>
                          </div>
                         <div class="col-10 yellowdiv flex-container " >
                             <div>

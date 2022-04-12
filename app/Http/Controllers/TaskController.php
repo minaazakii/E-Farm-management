@@ -20,7 +20,7 @@ class TaskController extends Controller
     {
         $empty = false;
         $months = ["January","February","March","April","May","June","July","August","September","October","Novemeber","December"];
-        $tasks = $this->database->getReference($this->tablename)->getSnapShot()->getvalue();
+        $tasks = $this->database->getReference('User')->getChild(Cookie::get('id'))->getChild('Tasks')->getSnapShot()->getValue();
         if($tasks == "")
         {
             $empty = true;
@@ -36,7 +36,7 @@ class TaskController extends Controller
 
     public function taskDetailsIndex($id)
     {
-        $task= $this->database->getReference($this->tablename)->getChild($id)->getSnapShot()->getvalue();
+        $task= $this->database->getReference('User')->getChild(Cookie::get('id'))->getChild('Tasks')->getChild($id)->getSnapShot()->getvalue();
         $today = Carbon::now() ;
         $addedTasks = [];
         $addedInterval =[];
@@ -101,16 +101,23 @@ class TaskController extends Controller
             'endDate' => 'required|after:startDate',
             'notes' => 'required'
         ]);
+
+        $today = now()->format('d/m/Y');
+        $carbon = Carbon::createFromFormat('d/m/Y', $today);
+        $day = substr($carbon->format('l'),0,3);
+        $month = substr($carbon->format('F'),0,3);
+        $time = now()->format('H:i:s');
+        $fullDate = $day.','.' '.$carbon->format('d').' '.$month.' '.$carbon->format('Y').' '.$time;
+
         $taskData=
         [
             'corp' => $request->corp,
-            'startDate' => $request->startDate,
-            'endDate' =>$request->endDate,
+            'startDate' => str_replace('-','/',$request->startDate),
+            'endDate' =>str_replace('-','/',$request->endDate) ,
             'notes'=>$request->notes,
-            'userEmail'=>Cookie::get('email'),
         ];
 
-        $taskRef = $this->database->getReference($this->tablename)->push($taskData);
+        $taskRef = $this->database->getReference('User')->getChild(Cookie::get('id'))->getChild('Tasks')->getChild($fullDate)->set($taskData);
 
         //return response()->json();
         return redirect()->route('task.index');
@@ -130,7 +137,7 @@ class TaskController extends Controller
         [
             'corp' => $request->corp,
             'startDate' => $request->startDate,
-            'endDate' =>$request->endDate,
+            'endDate' =>'-','/',$request->endDate ,
             'notes'=>$request->notes,
             'userEmail'=>Cookie::get('email'),
         ];

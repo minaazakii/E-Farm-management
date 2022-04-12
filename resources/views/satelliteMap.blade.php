@@ -121,92 +121,11 @@
                 <script>
                     let landId;
 
-                    // function getApi()
-                    // {
-                    //     console.log('api')
-                    //             geoData.push(geoData[0]);
-                    //             let data = {
-                    //                 "name":$('#land').val(),
-                    //                 "geo_json":{
-                    //                     "type":"Feature",
-                    //                     "properties":{
-
-                    //                     },
-                    //                     "geometry":{
-                    //                         "type":"Polygon",
-                    //                         "coordinates": [geoData]
-                    //                     }
-                    //                 }
-                    //                 }
-                    //         fetch('http://api.agromonitoring.com/agro/1.0/polygons?appid=4ff9914288c431e66d4954be31a9c21d',{
-
-                    //             method:'POST',
-                    //             headers:{
-                    //                 'Content-Type': 'application/json',
-                    //             },
-                    //             body:JSON.stringify(data)
-                    //         })
-                    //         .then((response)=>response.json())
-                    //         .then((data)=>{
-                    //             console.log(data);
-                    //             landId = data.id;
-                    //             return data;
-
-                    //         })
-                    //         .catch((error)=>{
-                    //             console.log(error);
-
-                    //         })
-                    // }
-                    // function getData()
-                    // {
-                    //     console.log('api')
-                    //             geoData.push(geoData[0]);
-                    //             let data = {
-                    //                 "name":$('#land').val(),
-                    //                 "geo_json":{
-                    //                     "type":"Feature",
-                    //                     "properties":{
-
-                    //                     },
-                    //                     "geometry":{
-                    //                         "type":"Polygon",
-                    //                         "coordinates": [geoData]
-                    //                     }
-                    //                 }
-                    //                 }
-                    //     return new Promise(function(resolve, reject) {
-                    //         fetch('http://api.agromonitoring.com/agro/1.0/polygons?appid=4ff9914288c431e66d4954be31a9c21d',{
-
-                    //             method:'POST',
-                    //             headers:{
-                    //                 'Content-Type': 'application/json',
-                    //             },
-                    //             body:JSON.stringify(data)
-                    //             })
-                    //             .then((response)=>{return response.json()})
-                    //             .then((data)=>{
-                    //             console.log(data);
-                    //             landId = data;
-                    //             resolve(data) ;
-
-                    //             })
-                    //             .catch((error)=>{
-                    //             console.log(error);
-
-                    //             })
-                    //     });
-                    // }
-
-
                     function submitRequest()
                     {
-
                         // let id = getData().then(data => {
                         //     return data.id
-
                         //     }).then();
-
                         geoData.push(geoData[0]);
                         let land = $('#land').val();
                         let cropType = $('#cropType').val();
@@ -240,8 +159,6 @@
                                 {
                                     alert('Error While Saving Data')
                                 }
-
-
                             }
                         })
                     }
@@ -249,12 +166,10 @@
                     saveBtn.addEventListener("click", submitRequest);
                     $('#mapForm').submit(function(e){
                         e.preventDefault();
-
                     });
                 </script>
 
                 <script>
-
                 </script>
                 </body>
 </html>

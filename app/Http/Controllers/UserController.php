@@ -36,14 +36,19 @@ class UserController extends Controller
 
         $userData=
         [
-            'name' => $request->name,
             'email' => $request->email,
             'password' =>$request->password,
 
         ];
 
-        // $userRef = $this->database->getReference($this->tablename)->push($userData);
-        $createdUser = $auth->createUser($userData);
+        $authUserData =
+        [
+            'email'=>$request->email,
+            'name'=>$request->name
+        ];
+
+        $authCreatedUser = $auth->createUser($userData);
+        $userRef = $this->database->getReference($this->tablename)->getChild($authCreatedUser->uid)->set($authUserData);
         return response()->json();
     }
 
