@@ -55,7 +55,6 @@ class UserController extends Controller
 
     public function login(Request $request)
     {
-        $dashboard = new DashboardController($this->database);
         $auth = app('firebase.auth');
         $this->validate($request,
         [
@@ -67,8 +66,10 @@ class UserController extends Controller
         {
             $userSigninResult = $auth->signInWithEmailAndPassword($request->email, $request->password);
             $user = $auth->getUser($userSigninResult->data()['localId']);
+            $name = $this->database->getReference($this->tablename)->getChild($user->uid)->getValue()['name'];
             return redirect()->route('dashboard.index')
             ->withCookie('id',$user->uid)
+            ->withCookie('name',$name)
             ->withCookie('email',$user->email);
 
 
@@ -86,10 +87,27 @@ class UserController extends Controller
        //throw  ValidationException::withMessages(['error'=>'Wrong E-mail or Password'] );
     }
 
+    public function googleLogin(Request $request)
+    {
+        $auth = app('firebase.auth');
+        $userData=
+        [
+            'email' => $request->email,
+            'name' =>$request->name,
+
+        ];
+        $userRef = $this->database->getReference($this->tablename)->getChild($request->id)->set($userData);
+         return response()->json()
+            ->withCookie('id',$request->id)
+            ->withCookie('email',$request->email)
+            ->withCookie('name',$request->name);
+    }
+
     public function logout()
     {
         Cookie::forget('id');
         Cookie::forget('email');
+        Cookie::forget('name');
         return redirect()->route('login.index');
 
     }

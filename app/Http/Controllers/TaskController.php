@@ -37,57 +37,16 @@ class TaskController extends Controller
     public function taskDetailsIndex($id)
     {
         $task= $this->database->getReference('User')->getChild(Cookie::get('id'))->getChild('Tasks')->getChild($id)->getSnapShot()->getvalue();
-        $today = Carbon::now() ;
-        $addedTasks = [];
-        $addedInterval =[];
-        $addedRemainigDays=[];
-        $addedSdate=[];
-        $addedEdate=[];
-        $addedPercentage = [];
-        //added Tasks from Detals Page
-        foreach($task as $addedTask)
-        {
-            if(is_array($addedTask))
-            {
-                $addedTasks[] = $addedTask;
-                $addedSdate[] = new DateTime($addedTask['startDate']);
-                $addedEdate[] = new DateTime($addedTask['endDate']);
-
-            }
-        }
-
-        for ($i=0; $i <count($addedSdate) ; $i++)
-        {
-            $addedInterval[$i] = $addedSdate[$i]->diff($addedEdate[$i]);
-            $addedRemainigDays[$i] = $today->diff($addedTasks[$i]['endDate']);
-            $addedPercentage[$i] =  round((($addedInterval[$i]->days - $addedRemainigDays[$i]->days)/$addedInterval[$i]->days)*100);
-        }
-        $sDate = new DateTime($task['startDate']);
-        $eDate = new DateTime($task['endDate']);
-        $interval = $sDate->diff($eDate);
-        $remainigDays = $today->diff($task['endDate']);
-        $day = Carbon::createFromFormat('Y-m-d',$task['startDate'])->format('l');
-        if($interval->days != 0)
-        {
-
-            $percentage = (($interval->days - $remainigDays->days)/$interval->days)*100;
-        }
-        else
-        {
-            $percentage = 100 ;
-        }
-
-
+        $duration = Carbon::parse($task['startDate'])->diff(Carbon::parse($task['endDate']));
+        $totalDays = $duration->days;
+        $nowToEndDuration = Carbon::now()->diff(Carbon::parse($task['endDate']));
+        $percentage =100 - Round(($nowToEndDuration->days/$totalDays)*100) ;
         return view('taskDetails',
         [
             'task' =>$task,
-            'interval'=>$interval,
-            'day'=>$day,
-            'id'=> $id,
-            'percentage' => round($percentage),
-            'addedTasks' =>$addedTasks,
-            'addedInterval' =>$addedInterval,
-            'addedPercentage' =>$addedPercentage,
+            'duration'=>$duration,
+            'percentage'=>$percentage,
+            'daysLeft' =>$nowToEndDuration,
             'layout'=>'task'
         ]);
     }

@@ -1,6 +1,4 @@
 /* Dashboard page */
-var xValues = [10,20, 30 ,40, 50 ,60, 70, 80, 90 ];
-var yValues = [90, 30,70 ,20, 50, 40, 80 ,20,10];
 var barColors = [
   "rgb(59, 81, 47)",
   "rgb(81, 113, 65)",
@@ -34,22 +32,16 @@ new Chart("myChart", {
 });
 
 
-var iValues = [10,20, 30 ,40, 50 ,60, 70, 80, 90 ];;
-var oValues = [100, 100,100 ,100, 100, 100, 100,100,100];
+var iValues = [10,20, 30 ,40, 50 , 60, 70, 80, 90];;
+var oValues = [humidity,humidityRemain];
 var barColors = [
   "rgb(59, 81, 47)",
-  "rgb(81, 113, 65)",
-  "rgb(93, 130, 74)",
-  "rgb(102, 146, 84) ",
- " rgb(113, 162, 93)",
- "rgb(127, 171, 109)",
- "rgb(141, 181, 125)",
- "rgb(169, 199, 158)"];
+  ];
 
 new Chart("Chart", {
   type: "doughnut",
   data: {
-   
+
     datasets: [{
       backgroundColor: barColors,
       data: oValues
@@ -59,17 +51,16 @@ new Chart("Chart", {
 });
 
 var aValues = ["1", "2", "3", "4"];
-var bValues = [55, 49, 44, 24];
+var bValues = [soil,soilRemain];
 var barColors = [
   "rgb(59, 81, 47)",
-  "rgb(93, 130, 74)",
 
 ];
 
 new Chart("secondchart", {
   type: "doughnut",
   data: {
-   
+
     datasets: [{
       backgroundColor: barColors,
       data: bValues
@@ -94,9 +85,9 @@ function nextmonth(){
     var mnth = document.getElementById("mnth").innerHTML;
     console.log(mnth);
     for (var i =0 ; i< MonthName.length; i++){
-        
+
         if (mnth == MonthName[i]){
-            
+
             if (i ==11){
                 year++;
                 showdate(0,year,MonthName[0]);
@@ -119,7 +110,7 @@ function nextmonth(){
 }
 function pervmonth(){
     var mnth = document.getElementById("mnth").innerHTML;
-    
+
     for (var i =0 ; i< MonthName.length; i++){
         if (mnth == MonthName[i]){
             if (i ==0){
@@ -146,7 +137,7 @@ function pervmonth(){
 }
 
 function yieldprogress(){
-    
+
     var pre = document.getElementsByClassName("yieldprog");
     var prog = document.getElementsByClassName("progresbar");
     for (var i =0 ; i< pre.length; i++){
@@ -154,7 +145,7 @@ function yieldprogress(){
         prog[i].style.width = p;
         var con = p.split('%');
         if(parseInt(con) <=30){
-            
+
             prog[i].style.backgroundColor = "#D6EFC7";
 
         }
@@ -175,7 +166,7 @@ function yieldprogress(){
         }
 
     }
-    
+
 }
 
 function daysInMonth (month, year) {
@@ -200,9 +191,9 @@ function loaddate(){
     showdate(month, year ,MonthName[month] ,dayname);
     yieldprogress();
 
-  
 
-    
+
+
 }
 function showdate(month, year ,MonthName,dayname){
     var daysnum = daysInMonth(month+1,year);
@@ -218,9 +209,9 @@ function showdate(month, year ,MonthName,dayname){
         document.getElementsByTagName("td")[i].style.opacity = "65%";
 
     }
-    
+
     console.log(month +" "+ year + " " +  MonthName);
-    
+
     var row = document.getElementById("firstrow");
     var day1 = row.getElementsByTagName("td")[daysfirst];
     day1.innerHTML="1";
@@ -230,7 +221,7 @@ function showdate(month, year ,MonthName,dayname){
     document.getElementById("year").innerHTML = year;
 
 
-    
+
     for (var i = 1; i<daysnum;i++){
         document.getElementsByTagName("td")[daysfirst+i].innerHTML = i+1;
         document.getElementsByTagName("td")[daysfirst+i].style.opacity = "100%"
@@ -245,7 +236,7 @@ function showdate(month, year ,MonthName,dayname){
     for (var i=1 , j =0; i<=  allcell - upcell  ;i++,j++ ){
         row.getElementsByTagName("td")[daysfirst-i].innerHTML= lastmonth -j ;
     }
-    
+
 
 }
 

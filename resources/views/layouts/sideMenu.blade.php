@@ -12,7 +12,7 @@
 
             <div class="col-8 ">
               <div class="card-body ">
-                <h6 class="card-title">Amira Zakaria</h6>
+                <h6 class="card-title">{{ Cookie::get('name') }}</h6>
                 <h6 class="card-title">{{ Cookie::get('email') }}</h6>
               </div>
 

@@ -83,7 +83,7 @@
                                   <div class="row g-0">
                                     <div class="col-md-7 position-relative" >
                                         <div style="position: absolute; top: 40px; left: 82px; font-size: 0.9em; font-weight: 600; color: #184d47; ">
-                                            50%
+                                            {{ (int)json_decode($humidity) }}%
                                         </div>
                                       <canvas id="Chart" style="width:100%;max-width:600px"></canvas>
 
@@ -110,7 +110,7 @@
                                   <div class="row g-0">
                                     <div class="col-md-7 position-relative ">
                                         <div style="position: absolute; top: 40px; left: 82px; font-size: 0.9em; font-weight: 600; color: #184d47; ">
-                                            50%
+                                            {{ json_decode($soil) }}%
                                         </div>
                                       <canvas id="secondchart" style="width:100%;max-width:600px"></canvas>
 

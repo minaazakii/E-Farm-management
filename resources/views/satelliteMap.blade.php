@@ -146,7 +146,7 @@
                             success:function(response)
                             {
                                 alert('Data Saved')
-                                window.location.replace('http://localhost:8000/satellite/lands');
+                                window.location.replace('{{ route("satellite.landShow") }}');
                                 console.log(response);
                             },
                             error:function(error)
