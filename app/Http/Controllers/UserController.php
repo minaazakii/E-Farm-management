@@ -11,9 +11,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Cookie;
+use Symfony\Component\Process\Process;
 use App\Http\Controllers\DashboardController;
 use Kreait\Laravel\Firebase\Facades\Firebase;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class UserController extends Controller
 {
@@ -114,61 +116,8 @@ class UserController extends Controller
 
     public function Test(Request $request)
     {
-        $data =
-        [
-            'name' =>'hi',
-            'geo_json'=>[
-                'type'=>'Feature',
-                'properties'=>[
-                    'name'=>'hi'
-
-                ],
-                'geometry'=>[
-                    'type'=>'Polygon',
-                    'coordinates'=>
-                    [
-                        [
-                            [-121.1958,37.6683],
-                            [-121.1779,37.6687],
-                            [-121.1773,37.6792],
-                            [-121.1958,37.6792],
-                            [-121.1958,37.6683]
-                        ]
-                    ]
-                ]
-            ]
-        ];
-        // return json_encode($data);
-        $client = new Client(['base_uri' => 'http://api.agromonitoring.com/agro/1.0/polygons?appid=4ff9914288c431e66d4954be31a9c21d']);
-        $response = $client->request('POST','',
-        [
-            'json'=>
-            [
-                'name' =>'hi2',
-                'geo_json'=>[
-                    'type'=>'Feature',
-                    'properties'=>[
-                        'name'=>'hi'
-                    ],
-                    'geometry'=>[
-                        'type'=>'Polygon',
-                        'coordinates'=>
-                        [
-                            [
-                                [-121.1958,37.6681],
-                                [-121.1779,37.6687],
-                                [-121.1773,37.6792],
-                                [-121.1958,37.6792],
-                                [-121.1958,37.6681]
-                            ]
-                        ]
-                    ]
-                ]
-            ]
-
-        ]);
-        $test = json_decode($response->getBody());
-       return $test->id;
+        $result = shell_exec("python " . "E:/grad-test/graduation-project/app/Http/Controllers/Plant/659+leaf.py");
+        dd($result);
     }
 
 

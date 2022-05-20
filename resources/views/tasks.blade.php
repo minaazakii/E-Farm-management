@@ -76,7 +76,7 @@
                                 <div class="col-1 " style="padding-top: 32px; text-align: left;" id="down">
 
                                 </div>
-                                <div class= "col-5"> </div>
+                                <div class= "col-3"> </div>
 
                                 <div class="col-2 addation" style="padding-top: 26px;"><button type="button" class="btn btn-light" ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
                                   <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>

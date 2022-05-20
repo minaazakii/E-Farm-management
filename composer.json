@@ -13,6 +13,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "stevebauman/location": "^6.2",
+        "symfony/process": "^5.4",
         "symfony/psr-http-message-bridge": "^2.1"
     },
     "require-dev": {
