@@ -107,17 +107,19 @@ class UserController extends Controller
 
     public function logout()
     {
-        Cookie::forget('id');
-        Cookie::forget('email');
-        Cookie::forget('name');
-        return redirect()->route('login.index');
+        $id = Cookie::forget('id');
+        $email = Cookie::forget('email');
+        $name = Cookie::forget('name');
+        return redirect()->route('login.index')
+        ->withCookie($id)
+        ->withCookie($email)
+        ->withCookie($name);
 
     }
 
-    public function Test(Request $request)
+    public function analyze(Request $request)
     {
-        $result = shell_exec("python " . "E:/grad-test/graduation-project/app/Http/Controllers/Plant/659+leaf.py");
-        dd($result);
+        return redirect('http://66.42.40.145:8080');
     }
 
 

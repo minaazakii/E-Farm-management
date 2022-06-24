@@ -28,7 +28,7 @@ class DashboardController extends Controller
         $last4Temps = [];
         $dateAndTemps = [];
         //strtok($x, " "); to Remove After text Space
-        
+
         //To Seprate Date and Temprature And Remove Time
         foreach ($tempData as $date => $temp)
         {
