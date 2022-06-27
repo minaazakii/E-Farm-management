@@ -1,0 +1,142 @@
+#detect{
+}
+#detect h1{
+    text-align: center;
+    color: #184D47;
+    font-weight: 400;
+    font-size: 56px;
+}
+#detect #upload{
+    border: 1px solid transparent;
+    width: 75%;
+    padding: 10px;
+    margin: 5px auto;
+    background-color: #96bb7c51;
+    border-radius: 70px;
+
+}
+#detect #upload #circle{
+    border: 1px solid #184D47;
+    max-width: 250px;
+    height: 250px;
+    border-radius: 50% ;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+    display:flex;
+    overflow: hidden;
+}
+#detect #upload #circle svg{
+    fill: #184D47;
+    width: 20%;
+    height: 20%;
+}
+#detect #upload #circle img{
+    width: 100%;
+    height: 100%;
+    
+}
+#detect #upload p{
+    text-align: center;
+    font-size: 22px;
+    color: #60625e;
+    margin: 15px auto;
+
+}
+#detect #upload input[type=submit]{
+    display: block;
+    margin: 10px auto;
+    background-color: #fad585;
+    color: #184D47;
+    min-width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid #fad585;
+    transition: 0.3s;
+}
+
+#detect #upload input[type=submit]:hover{
+    background-color: #184D47;
+    color: #fad585;
+
+}
+
+#detectResult{
+    min-height: calc(100vh - 65px - 140px );
+    margin-top: 60px;
+    padding: 5px;
+}
+#detectResult img{
+    display: block;
+    width: 100%;
+    margin: 0px auto;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    
+
+}
+#detectResult h2{
+    color: #96bb7c;
+    font-weight: 400;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+#detectResult p{
+    color: #46716c;
+    margin-top: 20px;
+    font-size: 20px;
+}
+#detectResult a{
+    display: block;
+    margin-top: 40px ;
+    color: #184D47;
+    font-weight: 500;
+    text-decoration: none;
+}
+#detectResult a svg{
+    width: 20px;
+    height: 20px;
+
+}
+#detectResult button{
+    display: block;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    background-color: #fad585;
+    color: #184D47;
+    min-width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid #fad585;
+    transition: 0.3s;
+}
+#detectResult button:hover{
+    background-color: #184D47;
+    color: #fad585;
+}
+
+
+
+@media screen and (max-width: 490px){
+    #detect h1{
+        font-size: 32px;
+    }
+    #detect #upload{
+        width: 90%;
+        
+    
+    }
+    #detectResult img{
+        max-height: 400px;
+    }
+    #detectResult button{
+        margin-inline: auto;
+    }
+}

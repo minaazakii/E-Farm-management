@@ -107,13 +107,12 @@ class SatelliteController extends Controller
         $imgs = json_decode($imgResponse);
         $NDVI = json_decode($response);
         $lastDay=max($NDVI);
-        // foreach($NDVI as $date)
+        // foreach($NVI as $date)
         // {
         //    echo date('Y/m/d H:i:s', $date->dt) .'</br>';
         // }
         //return date('Y/m/d H:i:s',  '1648119031') .'</br>';
         $soilResponse = HTTP::get('http://api.agromonitoring.com/agro/1.0/soil?polyid='.$land['id'].'&appid=155d972869de7dbd371856df24a1abe9');
-
         $coordinates = json_encode($land['coordinations'],JSON_NUMERIC_CHECK);
         $firstPoint =  json_encode($land['coordinations'][0],JSON_NUMERIC_CHECK);
 
@@ -124,15 +123,16 @@ class SatelliteController extends Controller
             'coordinates'=> $coordinates,
             'layout'=>'satellite',
             'lastDay'=> $lastDay,
-            'soilResponse'=>$soilResponse
+            'soilResponse'=>$soilResponse,
+            'images'=>$imgs['0']->image
         ]);
 
     }
 
     public function test()
     {
-        $response = Http::get('http://api.agromonitoring.com/agro/1.0/polygons/5abb9fb82c8897000bde3e87?appid=c27b1e059d33d476d386a65e4635b76d');
-        return $response;
+        $worker = $this->database->getReference('User')->getChild(Cookie::get('id'))->getChild('Workers')->set();
+
     }
 
 }

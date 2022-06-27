@@ -5,6 +5,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SensorController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MarketController;
 use App\Http\Controllers\SatelliteController;
 
 /*
@@ -18,7 +19,7 @@ use App\Http\Controllers\SatelliteController;
 |
 */
 
-Route::get('/test',[UserController::class,'test'])->name('test');
+Route::get('/test',[SatelliteController::class,'test'])->name('test');
 Route::view('/','loginReg')->name('login.index');
 
 
@@ -53,6 +54,10 @@ Route::POST('/satellite/map',[SatelliteController::class,'saveCoordinate'])->nam
 Route::GET('/satellite/lands',[SatelliteController::class,'landShow'])->name('satellite.landShow');
 Route::GET('/satellite/lands/{id}',[SatelliteController::class,'landDetail'])->name('satellite.landDetail');
 Route::GET('sat/test',[SatelliteController::class,'test']);
+
+//marktet Routes
+
+Route::get('/market',[MarketController::class,'start'])->name('market.start');
 
 });
 

@@ -1,7 +1,6 @@
-body{
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-transform: uppercase;
+
+.loginsetting{
+    margin-top: 5em;
 }
 
 .oneform{
@@ -10,6 +9,9 @@ body{
     background-color: hsl(95, 32%, 61%,0.58);
     border-radius: 39px 0px;
     text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+
 
    
 
@@ -38,8 +40,8 @@ margin-top: 0.5em;
 .nav{
     margin: 30px;
     justify-content: space-between;
-   
-
+    background-color: white;
+ z-index: 3;
 }
 .nav-link{
     color: rgb(21, 58, 21);
@@ -173,3 +175,199 @@ form{
 
 }
 
+.carousel-item img{
+    height: 41em;
+width: 	100%	;    
+}
+.carousel-caption{
+    text-align: left;
+    width: 30em;
+    top: 150px;
+}
+
+.carousel-caption h5{
+    margin-bottom: 25px;
+    color: #184D47;
+    font-size: 15px;
+}
+
+.carousel-caption p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 102px;
+    
+    color: #FFFFFF;
+    
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.btnyellow{
+    background-color: #FAD586;
+    border-radius: 30px;
+    border: none;
+    color: #0b382b;
+}
+.textshadow{
+    color: #96BB7C;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 37px;
+    line-height: 146px;
+text-shadow: 0px 15px 15px rgba(0, 0, 0, 0.25);
+}
+#div1 {
+    position: relative;
+    height: 200px;
+    width: 180px;
+    padding: 10px;
+    border: 3px solid #96BB7C;
+  }
+  #div2 {
+  
+    height: 200px;
+    width: 180px;
+    top: -24px;
+    right: 13px;
+    position: absolute;
+    background-image: url('../photos/div2.png');
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    z-index: 11;}
+    .after{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 40px;
+color: #184D47;
+border-right:  5px solid #184D47; 
+padding-right: 5px;
+}
+    .div3{
+        height: 50px;
+        width: 50px;
+        background-color: #96BB7C;
+        position: absolute;
+        top: -32px;
+        left: -28px;
+    }
+    .toptobt p{
+        writing-mode: vertical-rl;
+text-orientation: mixed;
+font-family: 'Segoe UI';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+color: rgba(150, 187, 124, 0.2);
+text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+    }
+.spacetop{
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+ 
+
+}
+.before{
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    color: #184D47;
+    border-left:  5px solid #184D47; 
+    padding-left: 15px;
+    }
+    #div11 {
+        position: relative;
+        height: 200px;
+        width: 180px;
+        padding: 10px;
+        border: 3px solid #96BB7C;
+      }
+      #div22 {
+      
+        height: 200px;
+        width: 180px;
+        top: -24px;
+        left: 10px;
+        position: absolute;
+        background-image: url('../photos/pexels-pixabay-265216\ 1.png');
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: cover;
+        z-index: 11;}
+
+        .div33{
+            height: 50px;
+            width: 50px;
+            background-color: #96BB7C;
+            position: absolute;
+            top: -32px;
+            right: -26px;
+                }
+                
+    #div222{
+    background-image: url('../photos/agricultural_technology_modern_agriculture_practices_farming_automation_farming_robots_automatio_1543834918\ 1.png');
+    height: 200px;
+    width: 180px;
+    top: -24px;
+    right: 13px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    z-index: 11; }
+    .text-end img{
+width: 100%;
+    }
+    .text-end {
+        width: 100px;
+        float: right;
+        margin-top: 35px;
+    }
+    .card{
+        height: 320px;
+        padding: 25px;
+        font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+
+color: #184D47;
+
+background: rgba(150, 187, 124, 0.07);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 70px 0px;
+
+    }
+    @media  screen and  (max-width: 767px) {
+  
+    .carousel-item img {
+    height: 53em;
+    width: 100%;
+                    }
+    .d-md-block {
+    display: block !important;
+}
+.carousel-caption p{
+    line-height: 75px;
+    font-size: 23px;
+    font-weight: 500;
+}
+.carousel-caption{
+    width: 85%;
+}
+.toptobt{
+    display: none;
+}
+#div{
+    margin-top: 130px;
+}
+}

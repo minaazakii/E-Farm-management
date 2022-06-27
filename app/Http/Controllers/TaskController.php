@@ -56,7 +56,7 @@ class TaskController extends Controller
         $this->validate($request,
         [
             'corp' =>'required',
-            'startDate' => 'required',
+            'startDate' => 'required|after_or_equal:today',
             'endDate' => 'required|after:startDate',
             'notes' => 'required'
         ]);

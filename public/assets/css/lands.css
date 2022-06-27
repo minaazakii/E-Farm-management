@@ -14,7 +14,13 @@
     background-color: transparent;
     border: 0px solid transparent;
     border-bottom: 1px solid #707070;
-    height: 180px;
+    max-height: 180px;
+    padding: 0;
+}
+#sateLands .card-header img{
+    width: 100%;
+    margin: 0;
+    height: 100%;
 }
 #sateLands .card-body p{
     padding-left: 8px;

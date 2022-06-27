@@ -1,0 +1,124 @@
+#contactus{
+}
+#contactus h1{
+    color: #96BB7C;
+    text-align: center;
+    z-index: 99;
+    
+    display: block;
+}
+#contactus h1::after{
+    content: "Contact Us ..";
+    display: block;
+    position: relative;
+    left: 0;
+    top: -40px;
+    font-size: 1.28em;
+    z-index: -2;
+    color: #e5e5e5b3;
+}
+#contactus form{
+
+}
+#contactus input{
+    display: block;
+}
+#contactus form img{
+    width: 100%;
+
+}
+
+#contactus form input{
+    border: 0px;
+    border-bottom: 1px solid #184D474D;
+    display: block;
+    width: 80%;
+    font-weight: 500;
+    color: #184D474D;
+    font-size: 18px;
+    height: 45px;
+    margin-block: 20px;
+    padding-left: 10px;
+}
+#contactus form textarea{
+    width: 80%;
+    display: block;
+    font-weight: 500;
+    border: 1px solid #184D474D;
+    color: #184D474D;
+    padding-left: 10px;
+    margin-block: 30px;
+    height: 100px;
+
+    
+}
+#contactus form input:focus , #contactus form textarea:focus{
+    color: #184D47;
+    outline: none;
+}
+#contactus form input[type=submit]{
+    background-color: #fad585;
+    color: #184D47;
+    height: 50px;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid #fad585;
+    transition: 0.3s;
+    width: 40%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+}
+#contactus form input[type=submit]:hover{
+    background-color: #184D47;
+    color: #fad585;
+}
+
+#contactus #footer{
+    background-color: #184D47;
+    height: 250px;
+    padding-top: 40px;
+    text-align: center;
+
+}
+#contactus #footer a{
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 5px;
+
+}
+#contactus #footer a img{
+    width: 20px;
+    display: block;
+}
+#contactus #footer ul{
+    padding: 0;
+    list-style: none;
+}
+#contactus #footer ul li{
+    display: inline-block;
+}
+#contactus #footer ul li a{
+    color: #FAD586;
+    text-decoration: none;
+    margin: 10px 15px;
+
+}
+
+@media screen and (max-width : 768px) {
+    #contactus form img{
+        display: none;
+    }
+    #contactus form input , #contactus form textarea{
+        width: 90% ;
+    }
+    #contactus #footer{
+        position: sticky;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+    }
+
+}

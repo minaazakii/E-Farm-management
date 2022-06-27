@@ -2,17 +2,32 @@
     padding: 0;
     margin: 0;
   }
+  ::-webkit-scrollbar{
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track{
+    border-radius: 0;
+    background-color: #ddd;
+
+  } 
+  ::-webkit-scrollbar-thumb{
+    background-color: #184D47;
+    border-radius: 2px;
+  }
   #toggleside{
     display: none;
-    position: relative;
   }
+ 
 
   #sidemenu{
-    background-color: #184D47;
     height: 100vh;
     position: sticky;
     left: 0;
     top: 0;
+  
+  }
+  #sidemenu.active{
+    left: 0;  
   }
 
   #sidenav {
@@ -84,13 +99,27 @@
     
     top: 6px;
   }
+  .thebody #stickyheader .input-group-text svg{
+/*     border: 1px solid #000;
+ */  }
+  .thebody #stickyheader #search{
+    top: -60px;
+    opacity: 1;
+
+  }
+  .thebody #stickyheader #search.active{
+    top: 50px;
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
   .thebody #stickyheader input:focus{
     z-index: 0;
     background-color: #fff;
     outline: 1px solid #184D47;
   }
-  .thebody #stickyheader input:focus .input-group-text {
+  .thebody #stickyheader input:focus  {
     z-index: 99;
+    color: #184D47;
   }
   .thebody #stickyheader button{
     width: 50px;
@@ -104,14 +133,20 @@
     margin-top: 12px;
   
   }
+  .thebody #stickyheader button.active{
+    background-color: #184D47;
+
+  }
+  .thebody #stickyheader button.active svg{
+    fill: #fff;
+  }
   .thebody #stickyheader button svg{
     display: block;
     margin: 0 auto;
     fill: #184D47;
-    transition: 0.2s;
-  
-    
   }
+  
+  
   .thebody #stickyheader button:hover {
     background-color: #184D47;
     transition: 0.2s;
@@ -133,7 +168,7 @@
     border-bottom-right-radius : 10px;
     border-top-left-radius : 10px;
     padding: 0;
-    border: 1px solid #184D47;
+    border: 1px solid #aaa;
     right: 44%;
     top: 43px;
     color: #fff;
@@ -162,26 +197,43 @@
   }
   .thebody #stickyheader .col-1 div ul li  {
     padding: 0;
+    position: relative;
 
   }
   .thebody #stickyheader .col-1 div ul li a{
     padding: 10px;
+    padding-left: 10%;
+    width: 97%;
+    margin: 3px auto;
     display: block;
     text-decoration: none;
     color: #184D47;
     padding-right: 20px;
     transition: 0.2s;
-
-    border-bottom: 1px solid #184D47;
   }
   .thebody #stickyheader .col-1 div ul li a:hover{
     font-size: 1.1em;
     transition: 0.2s;
   }
   .thebody #stickyheader .col-1 div ul li img{
-    width: 20px;
-    float: right;
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    left: 2%;
+    top: 16%;
 
+
+  }
+  .thebody #stickyheader .col-1 div ul hr{
+    height: 1px;
+    margin: 0px auto;
+    width: 90%;
+    background: #184D47;
+  }
+  .humidity-sensor{
+    position: absolute;
+    right: 46%;
+    top: 45%;
   }
   
   
@@ -267,7 +319,7 @@
         }
         .card{
         box-shadow: 0px 1px 4px #184D47;
-        border: 1px solid #184D47;
+        
         }
         .card-text{
         text-align: left;
@@ -288,139 +340,9 @@
           margin-top: -15px;
         
         }
-        @media  screen and (max-width: 1285px){
-
-          #weather{
-            width: 90%;
-            margin: 10px auto;
-            text-align: center;
-            height: 110px;
-            padding: 0;
-            box-shadow: 4px 4px 4px #00000029;}
-          
-          #weather p{
-            
-            font-size: 28px ;
-            font-weight: 400;
-            line-height: 70%;
-            padding-top: 30px;
-            
-          
-          
-          }
-          #weatherimg{
-            padding-top: 10px;
-            width: 80%;
-          }
         
-          #weather p span{
-            font-size: 14px;
-          }
-          
-          #miniweather{
-            
-            width: 100px;
-            margin-left: 0;
-            font-size: 10px;    
-            padding-top: 6px;
-            margin-bottom: 2px;
-            text-align: left;
-            padding-left: 2px;
-          
-            
-          }
-          #miniweather div{
-            display: inline;
-            width: 30px;
-            height: 35px;
-          }
-          #miniweather div:nth-child(1){
-            float: left;
-            margin-right: 10px;
-          }
-          #miniweather div:nth-child(2){
-            margin-left:0;
-          }
-          
-          #miniweather p{
-            color: #96bb7c;
-            text-align: left;
-            height: 35px;
-            width: 40px;
-            font-size: 12px ;
-            font-weight: 400;
-            display: inline;
-          
-          }
-          #miniweather p sup{
-            font-size: 9px ;
-          
-            
-          }
-        }
         
-        @media  screen and (max-width: 1200px){
-          #weatherimg{
-            padding-top: 0;
-            width: 50%;
-          }
-          #weather p{
-            
-            font-size: 34px ;
-            font-weight: 400;
-            line-height: 70%;
-            padding-top: 30px;
-            
-          
-          
-          }
-          
         
-          #weather p span{
-            font-size: 18px;
-          }
-          #miniweather{
-            
-            width: 200px;
-            margin-left: 30px;
-            font-size: 14px;    
-            padding-top: 6px;
-            margin-bottom: 2px;
-            text-align: left;
-            padding-left: 2px;
-          
-            
-          }
-          #miniweather div{
-            display: inline;
-            width: 30px;
-            height: 35px;
-          }
-          #miniweather div:nth-child(1){
-            float: left;
-            margin-right: 70px;
-          }
-          #miniweather div:nth-child(2){
-            margin-left:80px;
-          }
-          
-          #miniweather p{
-            color: #96bb7c;
-            text-align: left;
-            height: 35px;
-            width: 40px;
-            margin-right: 20px;
-            font-size: 18px ;
-            font-weight: 400;
-            display: inline;
-          
-          }
-          #miniweather p sup{
-            font-size: 12px ;
-          
-            
-          }
-        }
         
         @media screen and (max-width: 991.2px) {
           #toggleside{
@@ -433,9 +355,9 @@
             top : 0;
             z-index: 200;
             transition: 1s;
-            width: 50%;
             height: 100vh;
             
+                        
           }
         
         }
@@ -487,19 +409,23 @@
             left: 10px;
             width: 80%;
           }
+          .thebody #stickyheader #search{
+            opacity: 0;
+          }
           .thebody #stickyheader input{
             position: absolute;
             top: -70px;
             z-index: -2;
             transition: 0.3s;
           }
+
           .thebody #stickyheader .input-group-text{
             position: absolute;
             border: 0px solid #184D47;
             background-color: transparent;
             left: -10px;
             
-            top: 5px;
+            top: 10px;
           }
           .thebody #stickyheader .input-group-text:hover{
             cursor: pointer;

@@ -32,11 +32,11 @@ new Chart("myChart", {
 });
 
 
-var iValues = [10,20, 30 ,40, 50 , 60, 70, 80, 90];;
+var iValues = [10,20, 30 ,40, 50 ,60, 70, 80, 90 ];;
 var oValues = [humidity,humidityRemain];
 var barColors = [
   "rgb(59, 81, 47)",
-  ];
+];
 
 new Chart("Chart", {
   type: "doughnut",
@@ -54,7 +54,6 @@ var aValues = ["1", "2", "3", "4"];
 var bValues = [soil,soilRemain];
 var barColors = [
   "rgb(59, 81, 47)",
-
 ];
 
 new Chart("secondchart", {

@@ -24,7 +24,6 @@
 </head>
 
 
-
 <body>
 
   <div class="container-fluid p-0 m-0 ">
@@ -82,176 +81,203 @@
 
 
 
-<div class="row">
+  <div class="row">
 
-  <div class="col-3"><span>{{date('Y/m/d', $lastDay->dt ) }}</span></div>
-  <div class="col-6"></div>
-  <div class="col-3"></div>
+    <div class="col-3"><span>{{date('Y/m/d', $lastDay->dt ) }}</span></div>
+    <div class="col-6"></div>
+    <div class="col-3"></div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-3">max</div>
+    <div class="col-6"></div>
+    <div class="col-3">{{number_format($lastDay->data->max,2)}}</div>
+  </div>
+  <div class="row">
+
+    <div class="col-3">mean</div>
+    <div class="col-6"></div>
+    <div class="col-3">{{number_format($lastDay->data->mean,2)}}</div>
+  </div>
+  <div class="row">
+
+    <div class="col-3">median</div>
+    <div class="col-6"></div>
+    <div class="col-3">{{number_format($lastDay->data->median,2)}}</div>
+  </div>
+  <div class="row">
+
+    <div class="col-3">num</div>
+    <div class="col-6"></div>
+    <div class="col-3">{{number_format($lastDay->data->num,2)}}</div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-3">min</div>
+    <div class="col-6"></div>
+    <div class="col-3">{{number_format($lastDay->data->min,2)}}</div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-3">p25</div>
+    <div class="col-6"></div>
+    <div class="col-3">{{number_format($lastDay->data->p25,2)}}</div>
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-3">p75</div>
+    <div class="col-6"></div>
+    <div class="col-3">{{number_format($lastDay->data->p75,2)}}</div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-3">std</div>
+    <div class="col-6"></div>
+    <div class="col-3">{{number_format($lastDay->data->std,2)}}</div>
+  </div>
+  </div>
+</div>
 </div>
 
-<div class="row">
+<div  class="col-3">
+  <div class="height">
+    <div class="row g-0 color">
+      <div class="col-4 col-md-4">
+                      <h5>All</h5>
+       </div>
+      <div class="col-8 col-md-8">
+        <div class="btn-group me-2" role="group" aria-label="First group">
+          <button type="button" class="btn btn-outline-secondary">1</button>
+          <button type="button" class="btn btn-outline-secondary">2</button>
+          <button type="button" class="btn btn-outline-secondary">3</button>
 
-  <div class="col-3">max</div>
-  <div class="col-6"></div>
-  <div class="col-3">{{number_format($lastDay->data->max,2)}}</div>
-</div>
-<div class="row">
-
-  <div class="col-3">mean</div>
-  <div class="col-6"></div>
-  <div class="col-3">{{number_format($lastDay->data->mean,2)}}</div>
-</div>
-<div class="row">
-
-  <div class="col-3">median</div>
-  <div class="col-6"></div>
-  <div class="col-3">{{number_format($lastDay->data->median,2)}}</div>
-</div>
-<div class="row">
-
-  <div class="col-3">num</div>
-  <div class="col-6"></div>
-  <div class="col-3">{{number_format($lastDay->data->num,2)}}</div>
-</div>
-
-<div class="row">
-
-  <div class="col-3">min</div>
-  <div class="col-6"></div>
-  <div class="col-3">{{number_format($lastDay->data->min,2)}}</div>
-</div>
-
-<div class="row">
-
-  <div class="col-3">p25</div>
-  <div class="col-6"></div>
-  <div class="col-3">{{number_format($lastDay->data->p25,2)}}</div>
-</div>
-
-
-<div class="row">
-
-  <div class="col-3">p75</div>
-  <div class="col-6"></div>
-  <div class="col-3">{{number_format($lastDay->data->p75,2)}}</div>
-</div>
-
-<div class="row">
-
-  <div class="col-3">std</div>
-  <div class="col-6"></div>
-  <div class="col-3">{{number_format($lastDay->data->std,2)}}</div>
-</div>
-</div>
-                 </div>
-                </div>
-
-                <div  class="col-3">
-                  <div class="height">
-                    <div class="row g-0 color">
-                      <div class="col-4 col-md-4">
-                                      <h5>All</h5>
-                       </div>
-                      <div class="col-8 col-md-8">
-                        <div class="btn-group me-2" role="group" aria-label="First group">
-                          <button type="button" class="btn btn-outline-secondary">1</button>
-                          <button type="button" class="btn btn-outline-secondary">2</button>
-                          <button type="button" class="btn btn-outline-secondary">3</button>
-
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row g-0">
-                      <div class="col-4 col-md-4"> <h5>Current Soil Data</h5></div>
-                      <div class="col-8 col-md-8"></div>
-                    </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-0">
+      <div class="col-4 col-md-4"> <h5>Current Satallite Soil Data</h5></div>
+      <div class="col-8 col-md-8"></div>
+    </div>
 
 
 <div>
 
-                                        <div class="row">
+                        <div class="row">
 
-                      <div class="col-9">Temp 10cm depth</div>
-                      <div class="col-3">{{round($soilResponse['t10'] - 273.15)}}&deg;C</div>
-                    </div>
-                    <div class="row">
+      <div class="col-9">Temp 10cm depth</div>
+      <div class="col-3">{{round($soilResponse['t10'] - 273.15)}}&deg;C</div>
+    </div>
+    <div class="row">
 
-                      <div class="col-3">moisture</div>
-                      <div class="col-6"></div>
-                      <div class="col-3">{{$soilResponse['moisture']}}</div>
-                    </div>
-                    <div class="row">
+      <div class="col-3">moisture</div>
+      <div class="col-6"></div>
+      <div class="col-3">{{$soilResponse['moisture']}}</div>
+    </div>
+    <div class="row">
 
-                      <div class="col-3">Surface temp</div>
-                      <div class="col-6"></div>
-                      <div class="col-3">{{round($soilResponse['t0']- 273.15)}}&deg;C</div>
-                    </div>
-                    <div class="row">
+      <div class="col-3">Surface temp</div>
+      <div class="col-6"></div>
+      <div class="col-3">{{round($soilResponse['t0']- 273.15)}}&deg;C</div>
+    </div>
+    <div class="row">
 
-                      <div class="col-3"></div>
-                      <div class="col-6"></div>
-                      <div class="col-3"></div>
-                    </div>
-                    </div>
-                                     </div>
+      <div class="col-3"></div>
+      <div class="col-6"></div>
+      <div class="col-3"></div>
+    </div>
+    </div>
+                     </div>
+
 
 
 
                 </div>
                  </div>
+                 <div id="imgs">
+                  <div class="row row-cols-4 gx-5 gy-2 m-0 p-3 justify-content-start " >
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 ">
+                      <div id="img">
+                        <img src="{{ $images->ndvi }}" alt="">
+                      </div>
+                    </div>
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 ">
+                      <div id="img">
+                        <img src="{{ $images->evi }}" alt="">
+                      </div>
+                    </div>
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 " s>
+                      <div id="img">
+                        <img src="{{ $images->nri }}" alt="">
+                      </div>
+                    </div>
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 ">
+                      <div id="img">
+                        <img src="{{ $images->ndwi }}" alt="">
+                      </div>
+                    </div>
 
 
-
-
-</div>
-
+                  </div>
                 </div>
+
+
+
+
+      </div>
+
+    </div>
 
     </div>
     </div></div>
 
 
 
-                <script src="{{ asset('./assets/js/map.js') }}"></script>
-                <script src="{{ asset('./assets/js/main.js') }}"></script>
-                <script src="{{ asset('./assets/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('./assets/js/map.js') }}"></script>
+    <script src="{{ asset('./assets/js/main.js') }}"></script>
+    <script src="{{ asset('./assets/js/bootstrap.js') }}"></script>
 
-                <script src="{{ asset('./assets/js/map.js') }}"></script>
-                <script src="{{ asset('./assets/js/main.js') }}"></script>
-                <script src="{{ asset('./assets/js/bootstrap.js') }}"></script>
-                <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-                <script>
-                    function initMap() {
-                    const map = new google.maps.Map(document.getElementById("map"), {
-                        zoom: 4,
-                        center: {!! $firstPoint !!},
-                        mapTypeId: "satellite",
-                    });
-                    console.log({!! $coordinates  !!})
-                    var points = {!! $coordinates !!}
-                    const path = new google.maps.Polyline({
-                        path: points,
-                        geodesic: true,
-                        strokeColor: "#FF0000",
-                        strokeOpacity: 1.0,
-                        strokeWeight: 2,
-                    });
-                    var fitToMarkers = function(markers) {
-                        var bounds = new google.maps.LatLngBounds();
-                        var length = markers.length;
-                        for (var i = 0; i < length; i++) {
-                            bounds.extend(new google.maps.LatLng(markers[i].lat, markers[i].lng));
-                            map.fitBounds(bounds);
-                        }
-                    };
-                        fitToMarkers(points);
-                        path.setMap(map);
-                    }
-            </script>
+    <script src="{{ asset('./assets/js/map.js') }}"></script>
+    <script src="{{ asset('./assets/js/main.js') }}"></script>
+    <script src="{{ asset('./assets/js/bootstrap.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: {!! $firstPoint !!},
+            mapTypeId: "satellite",
+        });
+        console.log({!! $coordinates  !!})
+        var points = {!! $coordinates !!}
+        const path = new google.maps.Polyline({
+            path: points,
+            geodesic: true,
+            strokeColor: "#FF0000",
+            strokeOpacity: 1.0,
+            strokeWeight: 2,
+        });
+        var fitToMarkers = function(markers) {
+            var bounds = new google.maps.LatLngBounds();
+            var length = markers.length;
+            for (var i = 0; i < length; i++) {
+                bounds.extend(new google.maps.LatLng(markers[i].lat, markers[i].lng));
+                map.fitBounds(bounds);
+            }
+        };
+            fitToMarkers(points);
+            path.setMap(map);
+        }
+</script>
 
-            <script
-            async
-            defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Rqqqr-axeKVhPSfnvBKZZd2gwk4BeBY&callback=initMap"
-            ></script>
+<script
+async
+defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Rqqqr-axeKVhPSfnvBKZZd2gwk4BeBY&callback=initMap"
+></script>
                 </body>

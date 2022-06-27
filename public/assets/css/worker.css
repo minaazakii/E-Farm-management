@@ -1,0 +1,68 @@
+
+#addworker h1{
+    color: #184D47;
+    font-size: 34px;
+}
+#addworker .worker-img img{
+    border: 2px solid #9f9f9d;
+    display: block;
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    margin: 5px auto;
+}
+#addworker .worker-img button{
+    background-color: transparent;
+    border: 0px solid transparent;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    color: #777c78;
+    transition: 0.3s;
+    font-weight: 500;
+}
+#addworker .worker-img button:hover{
+    transform: scale(0.9);
+    transition: 0.3s;
+}
+#addworker label{
+    color: #777c78;
+    font-weight: 600;
+    font-size: 18px;
+
+}
+#addworker input[type=text],#addworker input[type=email],#addworker select{
+    display: block;
+    width: 100%;
+    border: 1px solid #777c78;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+#addworker input[type=submit],#addworker button{
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    background-color: #fad585;
+    color: #184D47;
+    height: 50px;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 1px solid #fad585;
+    transition: 0.3s;
+}
+#addworker input[type=submit]:hover,#addworker button:hover{
+    transform: scale(0.9);
+    transition: 0.1s;
+}
+#addworker input[type=submit]:focus,#addworker button:focus{
+    transform: scale(0.9);
+    transition: 0.1s;
+
+
+
+}

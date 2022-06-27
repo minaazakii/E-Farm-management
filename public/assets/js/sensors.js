@@ -44,7 +44,7 @@ var run1 = setInterval(function(){
     clearInterval(run1);
 
   }
-},10);
+},5);
 var run2 = setInterval(function(){
   v2++;
   document.getElementsByClassName("circular-progress")[1].style.backgroundImage= "conic-gradient(#D6EFC7,#184D47 " + v2 * 3.6 +"deg,#fff " + v2 * 3.6 +"deg)";
@@ -52,7 +52,7 @@ var run2 = setInterval(function(){
     clearInterval(run2);
 
   }
-},10);
+},5);
 var run3 = setInterval(function(){
   v3++;
   document.getElementsByClassName("circular-progress")[2].style.backgroundImage= "conic-gradient(#D6EFC7,#184D47 " + v3 * 3.6 +"deg,#fff " + v3 * 3.6 +"deg)";
@@ -60,4 +60,4 @@ var run3 = setInterval(function(){
     clearInterval(run3);
 
   }
-},10);
+},5);
