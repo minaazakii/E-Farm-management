@@ -7,13 +7,17 @@
 .cont{
     margin-top: 30px;
 
+
 height: 90px;
 background: #7070700a ;
 text-align: right;
 
 border-radius: 32px;
 }
-
+.cont div{
+    text-align: left;
+    padding-left: 20px;
+}
 
 .cont div{
   padding-top: 40px;

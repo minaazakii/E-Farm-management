@@ -101,7 +101,7 @@ class SatelliteController extends Controller
     {
         $land = $this->database->getReference('User')->getChild(Cookie::get('id'))->getChild('Map')->getChild($id)->getSnapShot()->getValue();
         $url = "https://api.agromonitoring.com/agro/1.0/ndvi/history?polyid=".$land['id']."&start=1530336000&end=1534976000&appid=155d972869de7dbd371856df24a1abe9";
-        $imgUrl = "http://api.agromonitoring.com/agro/1.0/image/search?start=1483260631&end=1514796631&polyid=".$land['id']."&appid=155d972869de7dbd371856df24a1abe9";
+        $imgUrl = "http://api.agromonitoring.com/agro/1.0/image/search?start=1483218000&end=1604213200&polyid=".$land['id']."&appid=155d972869de7dbd371856df24a1abe9";
         $imgResponse = Http::get($imgUrl);
         $response = Http::get($url);
         $imgs = json_decode($imgResponse);
@@ -115,7 +115,6 @@ class SatelliteController extends Controller
         $soilResponse = HTTP::get('http://api.agromonitoring.com/agro/1.0/soil?polyid='.$land['id'].'&appid=155d972869de7dbd371856df24a1abe9');
         $coordinates = json_encode($land['coordinations'],JSON_NUMERIC_CHECK);
         $firstPoint =  json_encode($land['coordinations'][0],JSON_NUMERIC_CHECK);
-
 
         return view('landDetail',
         [

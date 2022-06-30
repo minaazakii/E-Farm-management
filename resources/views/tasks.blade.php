@@ -47,29 +47,27 @@
 
                           <div class="accordion-item">
                             <h2 class="accordion-header" id="headingOne{{ $key }}">
-
+                                <div class="container">
 
                               <div class="row cont" >
                                 <div class="col-2" >{{ $month }}</div>
                                 <div class="col-1 button">
                                   <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne{{ $key }}" aria-expanded="true" aria-controls="collapseOne{{ $key }}">
                                 </button></div>
-                                <div class="col-1 " style="padding-top: 32px; text-align: left;" id="down">
 
-                                </div>
-                                <div class= "col-3"> </div>
+                                <div class= "col-2"> </div>
 
-                                <div class="col-2 addation" style="padding-top: 26px;"><button type="button" class="btn btn-light" ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                <div class="col-3 addation" style="padding-top: 26px;"><button type="button" class="btn btn-light" ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
                                   <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
                                   <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
                                 </svg>Tap to Add</button></div>
 
-                                <div class="col-1 smaller">2022</div>
-                                <div class="col-1 " style="padding-top: 30px; text-align: left;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar2-week-fill" viewBox="0 0 16 16">
+                                <div class="col-2 smaller">2022</div>
+                                <div class="col-2 " style="padding-top: 30px; text-align: left;"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar2-week-fill" viewBox="0 0 16 16">
                                   <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zm9.954 3H2.545c-.3 0-.545.224-.545.5v1c0 .276.244.5.545.5h10.91c.3 0 .545-.224.545-.5v-1c0-.276-.244-.5-.546-.5zM8.5 7a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM3 10.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"/>
                                 </svg></div>
 
-                              </div>
+                              </div></div>
 
                             </h2>
                             <div id="collapseOne{{ $key }}" class="accordion-collapse collapse hide" aria-labelledby="headingOne{{ $key }}" data-bs-parent="#accordionExample">
