@@ -48,8 +48,8 @@
                             </div>
                             <div class="row justify-content-between  p-0 m-0">
                                 @if(array_key_exists(1,$weekSoilDate))
-                                <div class="col-3 pt-2">
-                                    <div style="width: 13px; height: 8px; background-color: #6c9255;">
+                                <div class="col-3">
+                                    <div style="width: 13px; height: 8px; background-color: #184D47; margin-top: 40%;">
 
                                     </div>
                                 </div>

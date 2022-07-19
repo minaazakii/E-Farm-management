@@ -13,7 +13,7 @@
 
 <style>
     #map{
-        height: 400px;
+        height: 395px;
         width: 100%;
     }
 </style>
@@ -62,7 +62,7 @@
 
 
 
-                 <div class="row ">
+                 <div class="row m-0">
 
                 <div id="map" class="col-12"></div>
                  </div>
@@ -124,7 +124,7 @@
                 <script
                 async
                 defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Rqqqr-axeKVhPSfnvBKZZd2gwk4BeBY&callback=initMap"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDILEAC4MSybDoPSa22jrz4hTDHPpS5G4I&callback=initMap"
                 ></script>
 
                 <script>
@@ -163,7 +163,7 @@
                                 console.log(error)
                                 if(error.responseJSON.message.split('message')[1])
                                 {
-                                    alert('Area selected is Too big');
+                                    alert('Area selected is Too big or Too small Please Check The Points');
                                 }else
                                 {
                                     alert('Error While Saving Data')

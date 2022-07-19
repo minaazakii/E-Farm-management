@@ -85,6 +85,7 @@ class SensorController extends Controller
             }
         }
 
+
         //**********************************  End Soil Moisture Data *********************************************************************************/
 
 
@@ -117,12 +118,13 @@ class SensorController extends Controller
         {
             $weekHumidityDate[] = $date;
             $weekHumidityTemp[] = $temp;
-            if(count($weekSoilDate) == 7 && count($weekSoilTemp) ==7)
+            if(count($weekHumidityDate) == 7 && count($weekHumidityTemp) ==7)
             {
                 break;
             }
-        }
 
+        }
+        
 
         //********************************** End Humidity Data *********************************************************************************/
         return view('sensors',

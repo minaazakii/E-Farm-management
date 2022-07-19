@@ -3,7 +3,7 @@ var menu = document.getElementById("sidemenu");
 function showmenu(){
     var sidebutton = document.querySelector("#toggleside").getElementsByTagName("button")[0];
     var content = document.getElementById("content");
-    
+
 
     if (menu.classList.contains("active")){
       menu.classList.remove("active");
@@ -24,7 +24,13 @@ function showmenu(){
 var search = document.getElementById("search");
 window.addEventListener("scroll",function(){
   var top = document.documentElement.scrollTop;
-  menu.style.top = top + "px";
+  if (menu.style.position == "sticky"){
+    this.alert("a7a");
+  }
+  else{
+    menu.style.top = top + "px";
+
+  }
 
 })
 
@@ -42,7 +48,7 @@ window.addEventListener("click",function(e){
   {
     search.classList.add("active");
   }
-  
+
   else{
     search.classList.remove("active");
   }

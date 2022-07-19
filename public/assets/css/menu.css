@@ -9,7 +9,7 @@
     border-radius: 0;
     background-color: #ddd;
 
-  } 
+  }
   ::-webkit-scrollbar-thumb{
     background-color: #184D47;
     border-radius: 2px;
@@ -17,17 +17,17 @@
   #toggleside{
     display: none;
   }
- 
+
 
   #sidemenu{
     height: 100vh;
     position: sticky;
     left: 0;
     top: 0;
-  
+
   }
   #sidemenu.active{
-    left: 0;  
+    left: 0;
   }
 
   #sidenav {
@@ -37,11 +37,11 @@
     top: 0;
     background-color: #184D47;
     overflow-x: hidden;
-    padding-top: 20px;
+    padding-top: 0px;
     overflow-x: hidden;
   }
-  
-  
+
+
   #sidenav a :visited {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
@@ -85,9 +85,9 @@
     border-radius: 17px;
     padding-left: 20px;
     font-size: 22px;
-  
-  
-  
+
+
+
   }
   .thebody #stickyheader .input-group-text{
     position: absolute;
@@ -96,7 +96,7 @@
     right: 10px;
     margin-top: 5px;
 
-    
+
     top: 6px;
   }
   .thebody #stickyheader .input-group-text svg{
@@ -131,7 +131,7 @@
     padding-top: 4px;
     transition: 0.2s;
     margin-top: 12px;
-  
+
   }
   .thebody #stickyheader button.active{
     background-color: #184D47;
@@ -145,12 +145,12 @@
     margin: 0 auto;
     fill: #184D47;
   }
-  
-  
+
+
   .thebody #stickyheader button:hover {
     background-color: #184D47;
     transition: 0.2s;
-  
+
   }
   .thebody #stickyheader button:hover svg{
     fill :#fff;
@@ -183,13 +183,13 @@
     border-radius: 5px;
     background-color: #ddd;
 
-  } 
+  }
   .thebody #stickyheader .col-1 div::-webkit-scrollbar-thumb{
     background-color: #184D47;
     border-radius: 5px;
 
   }
-  
+
   .thebody #stickyheader .col-1 div ul{
     padding: 0;
     margin: 0;
@@ -235,19 +235,19 @@
     right: 46%;
     top: 45%;
   }
-  
-  
 
 
 
 
 
-  
+
+
+
     .mypic{
     border-radius: 100%;
     }
     .card-body h6{
-   
+
       text-align: left;
       font: normal normal bold 13px/8px Sakkal Majalla;
       letter-spacing: 0px;
@@ -259,8 +259,8 @@
   .list-group-item-action{
     border-color: white;
     color:#184D47;
-  
-    
+
+
   }
   svg{
     margin-right: 10px;
@@ -274,21 +274,21 @@
   .photocard div div  img{
     border-radius: 52px;
     }
-    
-    
+
+
     .myimg{
     position: absolute;
     border-radius: 90px;
     width: 28%;
-    
-    
+
+
     }
 
 
- 
+
     .row{
     width: 100%;
-    
+
     }
     .card-header{
     padding-left: 35px;
@@ -315,11 +315,11 @@
         background-color: white;
         text-align: center;
         border-color: #184D47;
-        
+
         }
         .card{
         box-shadow: 0px 1px 4px #184D47;
-        
+
         }
         .card-text{
         text-align: left;
@@ -336,14 +336,14 @@
         opacity: 0.53;
         }
         #pic{
-        
+
           margin-top: -15px;
-        
+
         }
-        
-        
-        
-        
+
+
+
+
         @media screen and (max-width: 991.2px) {
           #toggleside{
             display: block;
@@ -356,10 +356,10 @@
             z-index: 200;
             transition: 1s;
             height: 100vh;
-            
-                        
+
+
           }
-        
+
         }
         @media screen and (max-width: 702px){
           .thebody #stickyheader .col-9{
@@ -371,37 +371,37 @@
           #sidemenu {
             width: 80%;
             height: 100vh;
-            
+
           }
           #sidenav{
             height: 100%;
-        
+
           }
         }
-        
+
         @media  screen and (max-width: 576px){
           .sidenav {
             position: absolute;
             left: -800px;
             transition: 1s;
           }
-          
+
           .aroundmg{
             margin: 0;
             display: inline;
-        
-          }
-        
 
-        
+          }
+
+
+
           #toggleside{
             display: block;
             top: 0;
             left: 0;
           }
-          
-          
-        
+
+
+
         }
         @media  screen and (max-width: 460px){
           .thebody #stickyheader .col-9{
@@ -424,7 +424,7 @@
             border: 0px solid #184D47;
             background-color: transparent;
             left: -10px;
-            
+
             top: 10px;
           }
           .thebody #stickyheader .input-group-text:hover{
@@ -433,7 +433,6 @@
         }
 
 
-        
 
 
 
@@ -447,4 +446,4 @@
 
 
 
-        
+

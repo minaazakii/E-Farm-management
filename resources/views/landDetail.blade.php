@@ -202,23 +202,28 @@
                  <div id="imgs">
                   <div class="row row-cols-4 gx-5 gy-2 m-0 p-3 justify-content-start " >
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 ">
+                        <p class="text-center " style="color: #184D47; text-decoration: underline;" >NDVI</p>
                       <div id="img">
-                        <img src="{{ $images->ndvi }}" alt="">
+                        <img  src="{{ $images->ndvi }}" alt="">
                       </div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 ">
+                        <p class="text-center " style="color: #184D47; text-decoration: underline;" >EVI</p>
                       <div id="img">
                         <img src="{{ $images->evi }}" alt="">
                       </div>
                     </div>
-                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 " s>
+                    <div class="col-12 col-xl-3 col-lg-3 col-md-6 " >
+                        <p class="text-center " style="color: #184D47; text-decoration: underline;" >NRI</p>
+
                       <div id="img">
                         <img src="{{ $images->nri }}" alt="">
                       </div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 ">
+                        <p class="text-center " style="color: #184D47; text-decoration: underline;" >NDWI</p>
                       <div id="img">
-                        <img src="{{ $images->ndwi }}" alt="">
+                        <img  src="{{ $images->ndwi }}" alt="">
                       </div>
                     </div>
 
@@ -278,6 +283,6 @@
 <script
 async
 defer
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-Rqqqr-axeKVhPSfnvBKZZd2gwk4BeBY&callback=initMap"
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDILEAC4MSybDoPSa22jrz4hTDHPpS5G4I&callback=initMap"
 ></script>
                 </body>
